@@ -1,3 +1,7 @@
+### How to branch and send pull request
+
+[Imgur](http://i.imgur.com/u249zB2.jpg)
+
 ##Puppy Match
 *"an app that temporarily matches puppies with people who love them"*
 __________________
