@@ -10,10 +10,12 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+
+
 var app = express();
 
 // CONNECT to our mongo database
-mongoose.connect('mongodb://localhost/pup_buds')
+mongoose.connect('mongodb://localhost:27017/pup_buds')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,11 +29,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 //Source in models
 var User = require('./models/User');
 
+
+//
 app.use('/', routes);
 app.use('/users', users);
+
+// start the server
+app.listen();
+console.log('3000 is the magic port!');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
