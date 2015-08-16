@@ -17,7 +17,7 @@ __________________
 - Abel *Back End*
 
 **LINK to our TRELLO board**
-Here is our SCRUM! [Trello Board]('https://trello.com/b/Sebd1Udp/pupbuds').
+Here is our SCRUM! [Trello Board](https://trello.com/b/Sebd1Udp/pupbuds).
 
 #### vist the app
 [Pup Buds]('paste url here').
