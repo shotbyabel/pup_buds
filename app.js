@@ -1,5 +1,4 @@
 var express   = require('express');
-var mongoose = require('mongoose');
 var http = require('http');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -14,6 +13,7 @@ var passport= require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
 
 var app = express();
 
@@ -42,17 +42,24 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.locals.title = 'Auth with Passport';
+app.locals.title = 'PupBuds';
 
 //Source in models
+
 var User  = require('./models/User');
-var Owner = require('./models/Owner');
 var Puppy = require('./models/Puppy');
+
 
 
 
 //
 app.use('/', routes);
+
+// passport config
+var User = require('./models/User');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 // start the server

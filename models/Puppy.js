@@ -1,6 +1,5 @@
 var mongoose    = require('mongoose');
-var Owner       = mongoose.model('Owner');
-var User        = mongoose.model('User');
+var User        = require('./User');
 
 var PuppySchema = new mongoose.Schema({
   name: String,
@@ -9,16 +8,12 @@ var PuppySchema = new mongoose.Schema({
   friendliness: String,
   hypoallerginc: Boolean,
   size: String,
-  owners: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Owner'
-  }],
   users: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }]
 });
 
-var Puppy = mongoose.model('Puppy', PuppySchema);
-module.exports = Puppy;
+
+module.exports = mongoose.model('Puppy', PuppySchema);
 

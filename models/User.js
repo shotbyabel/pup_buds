@@ -1,25 +1,27 @@
 var mongoose              = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
-var Puppy                 = mongoose.model('Puppy');
+var Puppy                 = require('./Puppy');
 
 
 
 
 
 var UserSchema = new mongoose.Schema({
+  owner: Boolean,
   name: String,
   age: Number,
   email: String,
   kids: Boolean,
   zipCode: String,
-  picture: String
+  bio: String,
+  picture: String,
   puppies: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Puppy'
   }]
 });
 
-User.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose);
 
-var User = mongoose.model('User', UserSchema);
-module.exports = User;
+
+module.exports = mongoose.model('User', UserSchema);
