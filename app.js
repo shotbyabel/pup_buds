@@ -45,11 +45,15 @@ app.use(passport.session());
 app.locals.title = 'Auth with Passport';
 
 //Source in models
-var User = require('./models/User');
+var User  = require('./models/User');
+var Owner = require('./models/Owner');
+var Puppy = require('./models/Puppy');
+
+
 
 //
 app.use('/', routes);
-app.use('/users', users);
+
 
 // start the server
 app.listen();
