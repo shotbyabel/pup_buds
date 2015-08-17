@@ -48,7 +48,7 @@ app.locals.title = 'PupBuds';
 
 var User  = require('./models/User');
 var Puppy = require('./models/Puppy');
-
+var Message = require('./models/Message')
 
 
 
