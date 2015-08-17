@@ -1,3 +1,20 @@
+var mongoose              = require('mongoose');
+var passportLocalMongoose = require('passport-local-mongoose');
+
+var User = new mongoose.Schema({
+  name: String,
+  age: Number,
+  email: String,
+  kids: Boolean,
+  zipCode: String,
+  picture: String
+});
+
+User.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model('User', User);
+
+
 var mongoose = require('mongoose');
 
 var UserSchema = new mongoose.Schema({
@@ -10,9 +27,9 @@ var UserSchema = new mongoose.Schema({
   profile_pic: String
 });
 
-var User = mongoose.model('User', UserSchema);
+User.plugin(passportLocalMongoose);
 
-module.exports = User;
+module.exports = mongoose.model('User', User);
 
 
 // module.exports = mongoose.model('User', UserSchema);
