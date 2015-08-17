@@ -61,6 +61,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// connect to MongoDB
+// mongoose.connect('mongodb://localhost/passport-auth');
 
 // start the server
 app.listen();
