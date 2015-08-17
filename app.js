@@ -10,8 +10,6 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-
-
 var app = express();
 
 // CONNECT to our mongo database
@@ -29,10 +27,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 //Source in models
 var User = require('./models/User');
-
 
 //
 app.use('/', routes);

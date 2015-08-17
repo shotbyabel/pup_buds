@@ -27,15 +27,21 @@ Here is our SCRUM! [Trello Board]('paste url here').
 #### MVP (User stories)
 
 - [ ]   As a user I want to request a puppy to hang out with.
+
 - [ ]   I would like to view individual puppies on their profile page.
+
 - [ ]   As a user I would like to chat or message puppy owners.
+
 - [ ]   After meeting a puppy I would like to rate them and the owners.
+
 - [ ]   As a user I would like to view a page with all of owners and puppies(index)
+
 - [ ]   As a user I would like to see what puppies are near me (Google Maps API)
 
 ###ICEBOX
 
 -  Display puppies that are availalbe NOW!
+
 -  As a user I want to register my puppy.
 
 
@@ -43,8 +49,8 @@ Here is our SCRUM! [Trello Board]('paste url here').
 **Required**
 
 - MongoDB (database)
+
 - Express JS
-- 
 
 ### Installation Instructions & Depedencies
 
