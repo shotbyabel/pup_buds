@@ -7,11 +7,11 @@ var Puppy                 = require('./Puppy');
 
 
 var UserSchema = new mongoose.Schema({
-  owner: Boolean,
+  // owner: Boolean,
   name: String,
   age: Number,
   email: String,
-  kids: Boolean,
+  // kids: Boolean,
   zipCode: String,
   bio: String,
   picture: String,
