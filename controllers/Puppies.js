@@ -3,7 +3,7 @@ var Puppy = require('../models/Puppy');
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
     res.render(
-      'puppies/puppies-show',
+      'puppies/show',
       { title: 'Pup Buds',
         show: true,
         puppy: puppy
@@ -14,7 +14,7 @@ module.exports.renderPuppiesShow = function(req,res,next){
 
 module.exports.renderPuppiesNew = function(req,res,next){
   res.render(
-    'puppies/puppies-new',
+    'puppies/new',
     {
       title: 'Pup Buds',
       show: true
@@ -31,7 +31,8 @@ module.exports.renderPuppiesCreate = function(req,res,next){
 };
 
 module.exports.renderPuppiesEdit = function(req,res,next){
-  var id = request.params.id;
+  res.render(
+    'puppies/edit');
   Puppy.findById(function(error,puppy) {
     if (err) res.send('>' + err);
 
@@ -45,11 +46,6 @@ module.exports.renderPuppiesEdit = function(req,res,next){
     puppy.save(function(error){
       if (err) res.send('>' + err);
 
-    })
-  }
-
-
-
-
-    })
-}
+    });
+  })
+};
