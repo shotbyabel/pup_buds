@@ -2,27 +2,15 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var PuppiesController = require('../controllers/Puppies');
-
+var SessionsController= require('../controllers/Sessions');
+var UsersController = require('../controllers/Users');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Pup Buds' });
 });
 
-// This is going to be our view when a user is logged in
-router.get('/home', isLoggedIn, function(req, res, next) {
-  console.log(req.user);
-  res.render('index', { title: 'Express', user: req.user });
-});
 
-router.get('/login', function(req, res, next){
-  res.render('auth/login', {title: 'Log in'});
-});
-
-router.get('/logout', function(req, res, next){
-  req.logout();
-  res.redirect('/login');
-});
-
+//O_Authentication routes
 router.get('/auth/facebook', passport.authenticate('facebook',
   {
     scope:
@@ -52,21 +40,26 @@ router.get('/auth/twitter/callback', passport.authenticate('twitter', {
 }));
 
 
-function isLoggedIn(req, res, next){
-  if (req.isAuthenticated()) return next();
-  res.redirect('/login');
-};
 
-function isLoggedIn(req, res, next){
-  if(req.isAuthenticated()) return next();
-  res.redirect('/login');
-}
 
+//renders sesssions controller
+router.get('/login', SessionsController.sessionNew);
+router.get('/logout', SessionsController.sessionDelete);
+router.get('/secret', SessionsController.sessionShow);
+router.post('/login', SessionsController.sessionCreate);
+
+
+//renders puppies controller
 router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 router.get('/puppies/new', PuppiesController.renderPuppiesNew);
-router.post('/puppies', PuppiesController.renderPuppiesCreate);
 router.get('/puppies/:id', PuppiesController.renderPuppiesEdit);
+router.post('/puppies', PuppiesController.renderPuppiesCreate);
 
+
+//renders users contoller
+router.get('/auth/register', UsersController.usersNew);
+router.post('/auth/register', UsersController.usersCreate);
+router.get('/users/show', UsersController.userShow);
 module.exports = router;
 
 
@@ -188,6 +181,12 @@ module.exports = router;
 //   }
 // );
 
+// This is going to be our view when a user is logged in
+// router.get('/home', isLoggedIn, function(req, res, next) {
+//   console.log(req.user);
+//   res.render('index', { title: 'Express', user: req.user });
+// });
+
 // //facebook authorization
 // router.get('/auth/facebook', passport.authenticate('facebook',
 //   {
@@ -220,9 +219,26 @@ module.exports = router;
 
 // //SecretRoute
 
+
+// router.get('/login', function(req, res, next){
+//   res.render('auth/login', {title: 'Log in'});
+// });
+
+// router.get('/logout', function(req, res, next){
+//   req.logout();
+//   res.redirect('/login');
+// });
 // //Defined routes
 // router.get('/register', UsersController.userNew);
-// router.post('/register', UsersController.userCreate);
+// // router.post('/register', UsersController.userCreate);
+// function isLoggedIn(req, res, next){
+//   if (req.isAuthenticated()) return next();
+//   res.redirect('/login');
+// };
 
+// function isLoggedIn(req, res, next){
+//   if(req.isAuthenticated()) return next();
+//   res.redirect('/login');
+// }
 
 // module.exports = router;
