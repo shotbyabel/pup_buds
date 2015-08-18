@@ -1,1 +1,17 @@
-show.ejs
+<!DOCTYPE html>
+<html>
+  <%- include partials/header.ejs %>
+  <body>
+    <%- include partials/nav.ejs %>
+    <div class="container center-align">
+      <h1 class="teal lighten-1 white-text z-depth-3">
+        User Profile
+      </h1>
+    
+      <form action="/users/show/:id" method="GET" enctype="multipart/form-data">
+        <%- include partials/form.ejs %>
+      </form>
+    </div>
+    <%- include partials/footer_js.ejs %>
+  </body>
+</html>
