@@ -24,7 +24,7 @@ var show = function(req, res, next){
 
 //new User
 var userNew = function(req, res){
-  res.render('auth/register');
+  res.render('./auth/register');
 };
 
 //saves the new user to db this will go to one route
@@ -48,8 +48,6 @@ var userCreate = function(req, res){
 // var ownerCreate = function(req, res, next){
 
 // };
-
-
 var destroy = function(req, res, next){
 
 };

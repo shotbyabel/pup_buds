@@ -21,7 +21,7 @@ var destroy = function(req, res) {
 module.exports = {
   
   newRoute:     newRoute,
-  create:  create,
-  destroy: destroy
+  create:       create,
+  destroy:      destroy
 
 };

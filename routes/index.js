@@ -12,6 +12,11 @@ var authenticateUser = passport.authenticate('local',{failureRedirect: '/login'}
 
 );
 
+/* GET home page. */
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Pup Buds' });
+});
+
 var isLoggedIn = function(req, res, next) {
   if (req.isAuthenticated()) res.redirect('/login');
   return next();
@@ -33,12 +38,7 @@ var loadCurrentUser = function(req, res, next) {
     next();
   }
 };
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Pup Buds' });
-});
-
-// ///*AUTH/REGISTER ROUTES*///
+///*AUTH/REGISTER ROUTES*///
 // router.get('/register', function (req, res) {
 //   res.render('auth/register');
 // });
@@ -55,6 +55,11 @@ router.get('/', function(req, res, next) {
 //       });
 //     });
 //   });
+// });
+
+///*AUTH/REGISTER ROUTES*///
+// router.get('/register', function (req, res) {
+//   // res.render('auth/register');
 // });
 
 //login form //IF we call our view login
