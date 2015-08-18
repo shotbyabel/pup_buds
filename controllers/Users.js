@@ -24,7 +24,7 @@ var show = function(req, res, next){
 
 //new User
 var userNew = function(req, res){
-  res.render('index');
+  res.render('auth/register');
 };
 
 //saves the new user to db this will go to one route
