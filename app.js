@@ -18,7 +18,7 @@ var routes = require('./routes/index');
 var app = express();
 
 // CONNECT to our mongo database
-mongoose.connect('mongodb://localhost:27017/pup_buds')
+mongoose.connect('mongodb://localhost:27017/pup_buds');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,9 +48,7 @@ app.locals.title = 'PupBuds';
 
 var User  = require('./models/User');
 var Puppy = require('./models/Puppy');
-
-
-
+var Message = require('./models/Message');
 
 //
 app.use('/', routes);
@@ -61,6 +59,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// connect to MongoDB 
+// mongoose.connect('mongodb://localhost/passport-auth');
 
 // start the server
 app.listen();
