@@ -4,24 +4,25 @@
       <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/register.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   </head>
   <body>
   <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper blue-grey darken-2">
+      <a href="#" class="brand-logo">PupBuds</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html">About</a></li>
-        <li><a href="badges.html">Contact </a></li>
-        <li><a href="collapsible.html">Pups</a></li>
+        <li><a href="badges.html">Contact</a></li>
+        <li><a href="collapsible.html">PuppyTime</a></li>
       </ul>
     </div>
   </nav>
  
   <div class="container">
-  <h1>User Profile</h1> 
+  <h1 class="teal lighten-1 white-text z-depth-1 center align">User Profile</h1> 
+  <div class="center-align">
+  <form action="/users" method="POST" enctype="multipart/form-data">
   <div class="row">
     <form class="col s12">
       <div class="row">
@@ -33,41 +34,70 @@
           <input id="email" type="text" class="validate">
           <label for="email">email</label>
         </div>
-        <div class="input_field col s6">
-          <input id="zipcode" type="text" class="validate"> 
-          <label for="zipcode">zipcode</label> 
+       
+        <div class="input-field col s12">
+          <input id="city" type="text" class="validate">
+          <label for="city">city</label>
         </div>
         <div class="input_field col s6">
+          <input id="zipCode" type="text" class="validate"> 
+          <label for="zipCode">zipcode</label> 
+        </div>
+         <div class="input_field col s6">
           <input id="age" type="text" class="validate">
           <label for="age">age</label>
         </div>
-        <div class="input_field col s12">
-          <input id="bio" type="text" class="validate"> 
-          <label for="bio">bio</label>
+        
+        
+        <br>
+        
+        <div class="file-field input-field col s12">
+          <input class="file-path validate" type="text"/>
+          <div class="btn center-align red accent-2">
+            <span>File</span>
+            <input type="file" />
+          </div>
         </div>
-    
+        <div class="input_field col s12">
+        <h5>Describe Yourself</h5> 
+        <textarea class="form-control validate" rows="4"></textarea>
+        
+        </div>
       </form>
     </div>
   </div>
-  <h1>Puppy Profile</h1> 
-    <div class="row">
+ <div class="container">
+ <h1 class="teal teal lighten-1 white-text z-depth-1 white-text z-depth-1 center align">Puppy Profile</h1>
+    <form action="/puppies" method="POST" enctype="multipart/form-data">
+      <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s12">
-            <input id="first_name" type="text" class="validate">
-            <label for="first_name">Puppy Name</label>
-          </div>
-        <br>
-        <br>
-        <div class="input-field s12">
-        <select class="browser-default">
-          <option value="" disabled selected>Friendliness Level</option>
-          <option value="1">Super Friendly</option>
-          <option value="2">Friendly</option>
-          <option value="3">Not so Friendly</option>
-        </select>
+        <div class="input-field col s6">
+          <input id="puppy_name" type="text" class="validate">
+          <label for="puppy_name">Puppy Name</label>
         </div>
-        <div class="input-field s12">
+        <div class="input-field col s6">
+          <input id="puppy_age" type="date" class="datepicker validate">
+        </div>
+        <br>
+        <br>
+        <h5 class="pup-photo">Puppy profile photo</h5>
+        <div class="file-field input-field col s12">
+          <input class="file-path validate" type="text"/>
+          <div class="btn center-align red accent-2">
+            <span>File</span>
+            <input type="file" />
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <select class="browser-default">
+            <option value="" disabled selected>Friendliness Level</option>
+            <option value="1">Super Friendly</option>
+            <option value="2">Friendly</option>
+            <option value="3">Not so Friendly</option>
+          </select>
+        </div>
+        <div class="input-field col s12">
         <select class="browser-default">
           <option value="" disabled selected>Size</option>
           <option value="1">Huge puppy</option>
@@ -75,9 +105,22 @@
           <option value="3">Small puppy</option>
         </select>
         </div>
-      </form>
-      </div>
-    </div>                <!-- picture -->
+        <br>
+        <br>
+
+        <button class="btn waves-effect waves-light btn-sent register-btn red accent-2" type="submit" name="action">Submit<i class="material-icons red lighten-2"></i>
+      </div> 
+    </form>
+  </div>
+</div> 
+
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../../dist/js/materialize.js"></script>
+  <script src="js/pickdate.js"></script>    
+  <script type="text/javascript" src="jQuery-1.4.1-min.js"></script>
+
+
 
       
       
