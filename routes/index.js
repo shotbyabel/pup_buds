@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 ///*AUTH/REGISTER ROUTES*///
 router.get('/register', function (req, res) {
-  res.render('auth/register');
+  res.render('register');
 });
 
 router.post('/register', function (req, res) {
