@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html>
+<html>
 
   <head>
 
@@ -13,17 +13,20 @@
 
     <%- include ../partials/nav %>
 
-  <div class="container center-align">
-    <h1 class="#4db6ac teal-text lighten-2">User Profile</h1>
+    <div class="container center-align">
+      <h1 class="#4db6ac teal-text lighten-2">User Profile</h1>
 
-    <form action="/register" method="POST" enctype="multipart/form-data">
-      <% include ../partials/form %>
-    </form>
-     <% include ../partials/footer_js %>
+      <form action="/register" method="POST" enctype="multipart/form-data">
+        <% include ../partials/form %>
+      </form>
+       <% include ../partials/footer_js %>
 
-    <div class="center align">
-      <h8>Already have an account? <a href="/login">Log in</a></h5>
-    </div>
+      <div class="center align">
+        <h8>Already have an account? <a href="/login">Log in</a></h5>
+      </div>
+  </div>
+
+  <%- include ../partials/feeter %>
 
   </body>
 </html>
