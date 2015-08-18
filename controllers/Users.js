@@ -29,6 +29,8 @@ var destroy = function(req, res, next){
 
 };
 
+// res.render('users/chat', {user: req.user}); {otherUser: req.username}
+
 ///So there will be two different forms one is to register as a user
 //and the other is to register as an owner
 //that will be an option in the forms when a user clicks register
