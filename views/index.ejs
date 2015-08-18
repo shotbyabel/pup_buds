@@ -8,29 +8,15 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="public/stylesheets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="public/stylesheets/css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
-  <nav class="#4db6ac teal lighten-2" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">PupBuds</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Messages</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Profile</a></li>
-      </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-       <li><a href="#">Navbar Link</a></li>
-       <li><a href="#">Navbar Link</a></li>
-       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+  <div>
+    <%- include partials/nav %>
+  </div>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -76,7 +62,7 @@
             <h2 class="center black-text"><i class="medium material-icons">perm_identity</i></h2>
             <h5 class="center">Sign up in seconds</h5>
 
-            <p class="light">Sign up and add your sogs to your profile. When someone see's your sog and wants to set up a playdate, they can simply message you by hitting the request button below your suppy's post.</p>
+            <p class="light">Sign up and add your dogs to your profile. When someone see's your dog and wants to set up a playdate, they can simply message you by hitting the request button below your puppy's post.</p>
           </div>
         </div>
 
@@ -85,7 +71,7 @@
             <h2 class="center black-text"><i class="medium material-icons">search</i></h2>
             <h5 class="center">Search for other dogs</h5>
 
-            <p class="light">Once you're signed up, you can use our suppy prowl search to find other sogs to play with. You can search by size, friendlisness, and proximity to your location. Once your search is in, we'll give you a list of dogs that match your requirements, any of which you can requst a playdate with.</p>
+            <p class="light">Once you're signed up, you can use our puppy prowl search to find other dogs to play with. You can search by size, friendlisness, and proximity to your location. Once your search is in, we'll give you a list of dogs that match your requirements, any of which you can requst a playdate with.</p>
           </div>
         </div>
 
@@ -94,7 +80,7 @@
             <h2 class="center black-text"><i class="medium material-icons">message</i></h2>
             <h5 class="center">Connect with other owners</h5>
 
-            <p class="light">Once you receieve a request from a user to set up a playdate, enter into a secure chat between the two of you to coordinate the times and location of your sogs playdate. </p>
+            <p class="light">Once you receieve a request from a user to set up a playdate, enter into a secure chat between the two of you to coordinate the times and location of your dogs playdate. </p>
           </div>
         </div>
       </div>
@@ -155,7 +141,7 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../../dist/js/materialize.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
   <script src="js/main.js"></script>
 
   </body>
