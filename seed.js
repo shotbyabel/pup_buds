@@ -6,7 +6,8 @@ var Puppy = require('./models/Puppy');
 
 var fooPuppy, fundlePuppy, newUsers, newPuppies;
 
-
+fooPuppy = Puppy.create(newPuppies[0]);
+fundlePupply = Puppy.create(newPuppies[1]);
 
 newUsers = [
   {

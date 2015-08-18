@@ -1,6 +1,6 @@
 var mongoose              = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
-// var Puppy                 = require('./Puppy');
+var Puppy                 = require('./Puppy');
 
 var UserSchema = new mongoose.Schema({
   name: String,
