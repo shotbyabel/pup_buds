@@ -58,6 +58,22 @@ router.post('/login', passport.authenticate(
   }
 );
 
+//facebook authorization
+router.get('/auth/facebook', passport.authenticate('facebook',
+  {
+    scope:
+    [
+      'email',
+      'user_birthday',
+      'user_location'
+    ]
+  }));
+
+router.get('/auth/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/index',
+  failureRedirect: '/login'
+}));
+
 //User log outs
 router.get('/logout', function (req, res) {
   req.logout();
