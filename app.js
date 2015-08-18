@@ -1,3 +1,4 @@
+require('dotenv').load();
 var express   = require('express');
 var http = require('http');
 var path = require('path');
@@ -13,7 +14,9 @@ var passport= require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var routes = require('./routes/index');
 
-
+//O_Auth
+var Facebook = require('./config/facebook');
+var Twitter  = require('./config/twitter');
 
 var app = express();
 
@@ -59,7 +62,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// connect to MongoDB 
+// connect to MongoDB
 // mongoose.connect('mongodb://localhost/passport-auth');
 
 // start the server
