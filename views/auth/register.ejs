@@ -1,25 +1,29 @@
 <!DOCTYPE html>
   <html>
-    <head>
-  <!-- CSS  -->
+
+  <head>
+
+    <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
-  <link href="css/register.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link href="stylesheets/css/register.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="stylesheets/css/materialize.min.css"  media="screen,projection"/>
+
   </head>
   <body>
 
     <%- include ../partials/nav %>
 
   <div class="container center-align">
-    <h1 class="teal lighten-1 white-text z-depth-3">User Profile</h1>
+    <h1 class="#4db6ac teal-text lighten-2">User Profile</h1>
 
     <form action="/register" method="POST" enctype="multipart/form-data">
       <% include ../partials/form %>
     </form>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="../../dist/js/materialize.js"></script>
-    <script src="js/pickdate.js"></script>
-    <script type="text/javascript" src="jQuery-1.4.1-min.js"></script>
+     <% include ../partials/footer_js %>
+
+    <div class="center align">
+      <h8>Already have an account? <a href="/login">Log in</a></h5>
+    </div>
+
   </body>
 </html>

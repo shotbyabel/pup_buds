@@ -7,10 +7,11 @@
       <h1 class="teal lighten-1 white-text z-depth-3">
         User Profile
       </h1>
-
-      <form action="/puppies/edit/:id" method="PUT" enctype="multipart/form-data">
-        <%- include ../partials/form.ejs %>
-      </form>
+      <div class="row">
+        <form action="/puppies/edit/:id" method="PUT" enctype="multipart/form-data">
+          <%= include partials/pup_form.ejs %>
+        </form>
+      </div>
     </div>
     <%- include ../partials/footer_js.ejs %>
   </body>
