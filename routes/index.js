@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var PuppiesController = require('../controllers/Puppies');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -50,10 +51,21 @@ router.get('/auth/twitter/callback', passport.authenticate('twitter', {
   failureRedirect: '/login'
 }));
 
+
+function isLoggedIn(req, res, next){
+  if (req.isAuthenticated()) return next();
+  res.redirect('/login');
+};
+
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()) return next();
   res.redirect('/login');
 }
+
+router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
+router.get('/puppies/new', PuppiesController.renderPuppiesNew);
+router.post('/puppies', PuppiesController.renderPuppiesCreate);
+router.get('/puppies/:id', PuppiesController.renderPuppiesEdit);
 
 module.exports = router;
 
