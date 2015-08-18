@@ -2,16 +2,16 @@
 <html>
   <%- include partials/header.ejs %>
   <body>
-    <%- include partials/nav.ejs %>
+    <%= include partials/nav.ejs %>
     <div class="container center-align">
       <h1 class="teal lighten-1 white-text z-depth-3">
         User Profile
       </h1>
     
-      <form action="/users/edit/:id" method="PUT" enctype="multipart/form-data">
+      <form action="/register" method="PUT" enctype="multipart/form-data">
         <%- include partials/form.ejs %>
       </form>
     </div>
-    <%- include partials/footer_js.ejs %>
+    <%= include partials/footer_js.ejs %>
   </body>
 </html>
