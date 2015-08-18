@@ -47,7 +47,7 @@ module.exports = {
     userNew:      userNew,
     userCreate:   userCreate,
     show:         show
-    
+
 };
 
 // res.render('users/chat', {user: req.user}); {otherUser: req.username}
