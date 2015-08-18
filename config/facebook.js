@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
   console.log(refreshToken);
   console.log(profile);
 
-  done(null, profile);
+  done(null);
 }));
 
 module.exports = passport;
