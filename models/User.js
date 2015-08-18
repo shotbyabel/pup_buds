@@ -1,10 +1,6 @@
 var mongoose              = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
-var Puppy                 = require('./Puppy');
-
-
-
-
+// var Puppy                 = require('./Puppy');
 
 var UserSchema = new mongoose.Schema({
   // owner: Boolean,
@@ -19,6 +15,7 @@ var UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Puppy'
   }]
+
 });
 
 UserSchema.plugin(passportLocalMongoose);
