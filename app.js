@@ -16,6 +16,7 @@ var routes = require('./routes/index');
 
 //O_Auth
 var Facebook = require('./config/facebook');
+var Twitter  = require('./config/twitter');
 
 var app = express();
 

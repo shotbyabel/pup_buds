@@ -37,6 +37,19 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
   failureRedirect: '/login'
 }));
 
+router.get('/auth/twitter', passport.authenticate('twitter',
+  {scope:
+    [
+      'email',
+      'user_location'
+    ]
+}));
+
+router.get('/auth/twitter/callback', passport.authenticate('twitter', {
+  successRedirect: '/home',
+  failureRedirect: '/login'
+}));
+
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()) return next();
   res.redirect('/login');
