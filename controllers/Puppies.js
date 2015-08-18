@@ -22,6 +22,7 @@ module.exports.renderPuppiesNew = function(req,res,next){
   );
 };
 
+
 module.exports.renderPuppiesCreate = function(req,res,next){
   Puppy.create(req.body.puppy, function (err, puppy){
     if (err) res.send('>' + err);

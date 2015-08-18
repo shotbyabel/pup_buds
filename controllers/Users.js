@@ -9,7 +9,7 @@ var userShow = function(req, res, next){
     User.findById(req.params.id)
       .then(function(user) {
         res.render(
-          '/show',
+          'users/show',
           {
            user:req.user
           });
