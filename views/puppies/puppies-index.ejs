@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Pupbuds</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  </head>
+
+  <body>
+    <%- include partials/navbar %>
+
+<!-- Start of banner -->
+
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <h1 class="header center teal-text text-lighten-2">Enter in your search below to find pups</h1>
+
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+
+                <div class="input-field col s6">
+                  <select name="puppy[friendliness]"class="browser-default">
+                    <option value="" disabled selected>Friendliness Level</option>
+                    <option value="1">Super Friendly</option>
+                    <option value="2">Friendly</option>
+                    <option value="3">Not so Friendly</option>
+                  </select>
+                </div>
+
+                <div class="input-field col s6">
+                  <select name="Miles from your location"class="browser-default">
+                    <option value="" disabled selected>Miles from you</option>
+                    <option value="1">5</option>
+                    <option value="2">15</option>
+                    <option value="3">25</option>
+                    <option value="4">50</option>
+                  </select>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="parallax">
+        <img src="/images/tree_sniff.gif" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 189px, 0px);">
+      </div>
+    </div>
+
+<!--End of banner -->
+
+
+
+    <%- include partials/feeter %>
+  </body>
+
+</html>
