@@ -4,6 +4,7 @@ var userIndex = function(req, res, next){
 
 };
 
+
 var show = function(req, res, next){
 
 };
@@ -16,14 +17,16 @@ var userNew = function(req, res, next){
 var userCreate = function(req, res, next){
 
 };
-//new owner
-var ownerNew = function(req, res, next){
 
-};
-//saves the new owner to db this will go to a different route than n user
-var ownerCreate = function(req, res, next){
+// //new owner
+// var ownerNew = function(req, res, next){
 
-};
+// };
+
+// //saves the new owner to db this will go to a different route than n user
+// var ownerCreate = function(req, res, next){
+
+// };
 
 var destroy = function(req, res, next){
 
