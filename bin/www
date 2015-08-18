@@ -5,8 +5,7 @@
  */
 
 var app = require('../app');
-// var debug = require('debug')('pup_buds:server'); peh commented out
-var debug = require('debug')('pup_buds:server'); // peh added back
+var debug = require('debug')('pup_buds:server');
 var http = require('http');
 
 /**
@@ -22,8 +21,8 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-// var io = require('../io'); peh commented
-// io.attach(server); peh commented out
+var io = require('../io'); 
+io.attach(server); 
 
 /**
  * Listen on provided port, on all network interfaces.
