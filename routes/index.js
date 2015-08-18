@@ -1,7 +1,6 @@
 var express = require('express');
-var router = express.Router();
 var passport= require('passport');
-
+var router = express.Router();
 var User = require('../models/User');
 
 var UsersController = require("../controllers/Users");
@@ -34,28 +33,29 @@ var loadCurrentUser = function(req, res, next) {
     next();
   }
 };
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Pup Buds' });
+});
 
 // ///*AUTH/REGISTER ROUTES*///
 // router.get('/register', function (req, res) {
 //   res.render('auth/register');
 // });
-router.post('/register', function (req, res) {
-  User.register(new User({name: req.body.name}), req.body.password, function(err, user) {
-    if (err) return res.render('auth/register?', {user: user});
-    passport.authenticate('local')(req, res, function () {
-      req.session.save(function (err) {
-        if (err) {
-          return next(err);
-        }// WHERE ARE WE REDIRECTING TO the index??
-        res.redirect('/');
-      });
-    });
-  });
-});
+
+// router.post('auth/register', function (req, res) {
+//   User.register(new User({name: req.body.name}), req.body.password, function(err, user) {
+//     if (err) return res.render('auth/register', {user: user});
+//     passport.authenticate('local')(req, res, function () {
+//       req.session.save(function (err) {
+//         if (err) {
+//           return next(err);
+//         }// WHERE ARE WE REDIRECTING TO the index??
+//         res.redirect('/');
+//       });
+//     });
+//   });
+// });
 
 //login form //IF we call our view login
 router.get('/login', function (req, res) {
