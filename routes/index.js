@@ -6,8 +6,6 @@ var User = require('../models/User');
 var UsersController = require("../controllers/Users");
 var PuppiessController = require("../controllers/Puppies");
 
-
-
 var authenticateUser = passport.authenticate('local',{failureRedirect: '/login'}
 
 );
@@ -38,29 +36,6 @@ var loadCurrentUser = function(req, res, next) {
     next();
   }
 };
-///*AUTH/REGISTER ROUTES*///
-// router.get('/register', function (req, res) {
-//   res.render('auth/register');
-// });
-
-// router.post('auth/register', function (req, res) {
-//   User.register(new User({name: req.body.name}), req.body.password, function(err, user) {
-//     if (err) return res.render('auth/register', {user: user});
-//     passport.authenticate('local')(req, res, function () {
-//       req.session.save(function (err) {
-//         if (err) {
-//           return next(err);
-//         }// WHERE ARE WE REDIRECTING TO the index??
-//         res.redirect('/');
-//       });
-//     });
-//   });
-// });
-
-///*AUTH/REGISTER ROUTES*///
-// router.get('/register', function (req, res) {
-//   // res.render('auth/register');
-// });
 
 //login form //IF we call our view login
 router.get('/login', function (req, res) {
@@ -73,7 +48,6 @@ router.post('/login', passport.authenticate(
   {
     failureRedirect: '/login'
   }),
-
 
   function (req, res, next) {
     req.session.save(function (err) {

@@ -1,11 +1,9 @@
 var passport = require('passport');
-
 var User = require('../models/User');
 
 var userIndex = function(req, res, next){
 
 };
-
 
 var show = function(req, res, next){
     User.findById(req.params.id)
@@ -13,14 +11,12 @@ var show = function(req, res, next){
         res.render(
           '/show',
           {
-            user:req.user
+           user:req.user
+          });
+        }, function(err) {
+          return next(err);
         });
-      }, function(err) {
-        return next(err);
-      });
       };
-
-// };
 
 //new User
 var userNew = function(req, res){
@@ -41,23 +37,17 @@ var userCreate = function(req, res){
     });
   });
 };
-// //new owner
-// var ownerNew = function(req, res, next){
-// };
-// //saves the new owner to db this will go to a different route than n user
-// var ownerCreate = function(req, res, next){
 
-// };
 var destroy = function(req, res, next){
 
 };
 
 module.exports = {
 
-  
     userNew:      userNew,
     userCreate:   userCreate,
     show:         show
+    
 };
 
 // res.render('users/chat', {user: req.user}); {otherUser: req.username}
