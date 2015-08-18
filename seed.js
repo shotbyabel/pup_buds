@@ -4,42 +4,37 @@ var mongoose = require('mongoose');
 var User = require('./models/User');
 var Puppy = require('./models/Puppy');
 
-User.remove({}, function(err){
-  if (err) console.log(err);
-});
+var fooPuppy, fundlePuppy, newUsers, newPuppies;
 
-Puppy.remove({}, function(err){
-  if (err) console.log(err);
-});
+fooPuppy = Puppy.create(newPuppies[0]);
+fundlePupply = Puppy.create(newPuppies[1]);
 
-var newUsers = [
+newUsers = [
   {
     name: "John",
     age: 30,
-    email: "jj@email.com",
     zipCode: "90026",
     bio: "I'm a friendly guy!",
     picture: "#",
-    // puppies: [{
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: Puppy.findOne({name:"Fundle"})
-    // }]
+    puppies: [//Puppy.findOne({name:"Fundle"}, function(err, puppy){
+      //return puppy._id;
+    //})
+    ]
   },
   {
     name: "Bob",
     age: 28,
-    email: "bb@email.com",
     zipCode: "90026",
     bio: "I'm a friendly guy!",
     picture: "#",
-    // puppies: [{
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: Puppy.findOne({name:"Foo"})
-    // }]
+    puppies: [//Puppy.findOne({name:"Foo"}, function(err, puppy){
+      //return puppy._id;
+    //})
+    ]
   }
 ]
 
-var newPuppies = [
+newPuppies = [
   {
     name: "Fundle",
     age: 8,
@@ -47,10 +42,11 @@ var newPuppies = [
     friendliness: "Really friendly",
     hypoallerginc: true,
     size: "Really small",
-    // users: [{
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: User.findOne({name:"John"})
-    // }]
+    users: [//{
+      //type: mongoose.Schema.Types.ObjectId,
+      //ref: User.findOne({name:"John"})
+    //}
+    ]
   },
   {
     name: "Foo",
@@ -59,30 +55,45 @@ var newPuppies = [
     friendliness: "Really friendly",
     hypoallerginc: true,
     size: "Really small",
-    // users: [{
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: User.findOne({name:"Bob"})
-    // }]
+    users: [//{
+      //type: mongoose.Schema.Types.ObjectId,
+      //ref: User.findOne({name:"Bob"})
+    //}
+    ]
   }
 ]
 
-Puppy
-  .create(newPuppies)
-  .then(
-    function(puppies){
-      console.log(puppies.length + " puppies seeded");
-    }, function(err){
-      console.log(err);
-    });
+User.remove({}, function(err){
+  Puppy.remove({}, function(err){
+    Puppy.create(newPuppies, function(err, puppies){
+     console.log(puppies.length + " puppies created.");
+      newUsers.forEach(function(user){
+        User.register(new User({
+          name: user.name,
+          age: user.age,
+          zipCode: user.zipCode,
+          bio: user.bio,
+          picture: user.picture,
+          puppies: user.puppies
+        })
+      )}
+    );
+   });
+  });
+});
 
-User
-  .create(newUsers)
-  .then(
-    function(users){
-      console.log(users.length + " users seeded");
-    }, function(err){
-      console.log(err);
-    });
+
+
+// User
+//   .create(newUsers, function(err) {
+
+//   });
+//   .then(
+//     function(users){
+//       console.log(users.length + " users seeded");
+//     }, function(err){
+//       console.log(err);
+//     });
 
 mongoose.disconnect();
 
