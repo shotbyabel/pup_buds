@@ -13,21 +13,13 @@
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
-  <nav class="white" role="navigation">
-    <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li class="divider"></li>
-      <li><a href="#!">three</a></li>
-    </ul>
+  <nav class="#4db6ac teal lighten-2" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">PupBuds</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Puppy</a></li>
-        <li><a href="#">PuppyTime</a></li>
-        <li><a href="#">add puppy</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Profile</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -44,32 +36,37 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+        <h1 class="header center teal-text text-lighten-2">Find your best friends best friend!</h1>
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header white-text col s12 light">Pupbuds is the best place for dog owners to connect </h5>
         </div>
 
         <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+        <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
           <div class="modal-content">
-          <h4>Modal Header</h4>
-          <p>A bunch of text</p>
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
         </div>
-        <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
-    </div>
-       <!--  <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-        </div> -->
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Sign Up</a>
+        </div>
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Login</a>
+        </div>
         <br><br>
 
       </div>
     </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax">
+      <img src="/images/tree_sniff.gif" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 189px, 0px);">
+    </div>
   </div>
 
 
@@ -80,28 +77,28 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h2 class="center black-text"><i class="medium material-icons">perm_identity</i></h2>
+            <h5 class="center">Sign up in seconds</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">Sign up and add your sogs to your profile. When someone see's your sog and wants to set up a playdate, they can simply message you by hitting the request button below your suppy's post.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h2 class="center black-text"><i class="medium material-icons">search</i></h2>
+            <h5 class="center">Search for other dogs</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Once you're signed up, you can use our suppy prowl search to find other sogs to play with. You can search by size, friendlisness, and proximity to your location. Once your search is in, we'll give you a list of dogs that match your requirements, any of which you can requst a playdate with.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h2 class="center black-text"><i class="medium material-icons">message</i></h2>
+            <h5 class="center">Connect with other owners</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">Once you receieve a request from a user to set up a playdate, enter into a secure chat between the two of you to coordinate the times and location of your sogs playdate. </p>
           </div>
         </div>
       </div>
@@ -114,14 +111,33 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h2 class="header teal-text col s12 light">A run through the park. A splash at the beach. A romp in the snow.</h2>
+        </div>
+        <div class="row center">
+          <h5 class="header white-text col s12 light">Set up playdates and let your dog socialize and get some exercise. You can meet anywhere you want. Just preferably somewhere the dogs will like.</h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax">
+      <img src="/images/treadmill.gif" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 199px, 0px);">
+    </div>
   </div>
 
-  <div class="container">
+  <div class="row">
+    <div class="col s12 row center">
+      <h2>Plan Your Playdates</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s3"><br></br></div>
+    <div class="col s6 center">
+      <p>Here at PupBuds, we want you to get creative with your meetups! Go to the beach, head to the dog park, walk around the city with your pups in strollers. We don't care! Puppies are meant to play with other puppies though, so get out there and get your puppies together. But be careful! If too many puppies are in one place, it might cause a cuteness overload.</p>
+    </div>
+    <div class="col s3"><br></br></div>
+  </div>
+
+<!--   <div class="container">
     <div class="section">
 
       <div class="row">
@@ -145,18 +161,18 @@
       </div>
     </div>
     <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
+  </div> -->
 
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">We're a team of dog lovers dedicated to the ideal that puppies deserve to have friends!'</p>
 
 
         </div>
-        <div class="col l3 s12">
+        <!-- <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
@@ -173,15 +189,16 @@
             <li><a class="white-text" href="#!">Link 3</a></li>
             <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made by PupBuds
       </div>
     </div>
   </footer>
+
 
 
   <!--  Scripts-->
