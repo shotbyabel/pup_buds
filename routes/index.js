@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var passport = require('passport');
+var express           = require('express');
+var router            = express.Router();
+var passport          = require('passport');
 var PuppiesController = require('../controllers/Puppies');
 var SessionsController= require('../controllers/Sessions');
-var UsersController = require('../controllers/Users');
+var UsersController   = require('../controllers/Users');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Pup Buds' });
