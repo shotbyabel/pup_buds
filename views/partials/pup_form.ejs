@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col s12">
-    <div class="row">
+    <div class="container">
       <div class="input-field col s6">
         <input name="puppy[name]" id="puppy_name" type="text" class="validate" placeholder="puppy name">
       </div>
       <div class="input-field col s6">
-        <input name="puppy[age]" id="puppy_age" type="text" class="validate" placeholder="puppy age">
+        <input name="puppy[age]" id="puppy_age" type="date" class="datepicker validate" placeholder="puppy age">
       </div>
       <br>
       <br>
@@ -34,6 +34,16 @@
         </select>
         <br>
         <br>
+      </div>
+      <div class="col s12">
+      <p>
+        <input name="puppy[hypoallergenic]" type="checkbox" id="test5"/>
+        <label for="yes">true</label>
+      </p>
+      <p>
+        <input name="puppy[hypallergenic]" type="checkbox"/>
+        <label for="no">False</label>
+      </p>
       </div>
         <button class="btn waves-effect waves-light btn-sent register-btn red accent-2 z-depth-2" type="submit" name="action">Add Puppy<i class="material-icons red lighten-2"></i></button>
       </div>
