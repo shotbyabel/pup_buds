@@ -50,10 +50,11 @@ router.post('/login', SessionsController.sessionCreate);
 
 
 //renders puppies controller
-router.get('/puppies/new', PuppiesController.renderPuppiesNew);
-router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
-router.get('/puppies/:id', PuppiesController.renderPuppiesEdit);
+router.get('/puppies', PuppiesController.renderPuppiesIndex);
 router.post('/puppies', PuppiesController.renderPuppiesCreate);
+router.get('/puppies/new', PuppiesController.renderPuppiesNew);
+router.get('/puppies/:id', PuppiesController.renderPuppiesEdit);
+router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 
 
 //renders users contoller
