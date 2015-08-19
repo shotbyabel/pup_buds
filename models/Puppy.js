@@ -7,6 +7,7 @@ var PuppySchema = new mongoose.Schema({
   therapy: Boolean,
   friendliness: String,
   hypoallerginc: Boolean,
+  url: String,
   size: String,
   users: [{
     type: mongoose.Schema.Types.ObjectId,
