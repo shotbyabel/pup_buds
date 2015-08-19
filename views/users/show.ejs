@@ -9,12 +9,82 @@
 
   <body>
     <%- include ../partials/navbar.ejs %>
-    <div class="container center-align">
-      <h1 class="#4db6ac teal-text lighten-2">User Profile</h1>
 
-      <form action="/users/show/:id" method="GET" enctype="multipart/form-data">
-      </form>
+    <div class="container">
+      <h1 class="#4db6ac teal-text lighter-2">Your Profile</h1>
     </div>
+
+    <br></br>
+
+    <div class="center align">
+      <!-- <h1 class="#4db6ac teal-text lighter-2">Your Profile</h1> -->
+      <div class="row container center-align">
+
+        <div class="col s5 center teal">
+          <p>This is the name</p>
+        </div>
+
+        <div class="col s2"><br></br></div>
+
+        <div class="col s5 center teal">
+          <p>This is the name</p>
+        </div>
+
+      </div>
+
+      <div class="row container center-align">
+
+        <div class="col s3"><br></br></div>
+
+        <div class="col s4 center teal">
+          <p>This is the name</p>
+        </div>
+
+        <div class="col s1"><br></br></div>
+
+        <div class="col s4 center teal">
+          <p>This is the name</p>
+        </div>
+
+      </div>
+
+      <div class="row container center-align">
+
+        <div class="col s12 center teal">
+          <p>This bio</p>
+        </div>
+
+      </div>
+
+      <br></br>
+
+      <a class="waves-effect waves-light red btn">Edit Profile</a>
+
+    </div>
+
+    <br></br>
+
+
+    <!-- Puppy info -->
+
+
+    <div class="container">
+      <h1 class="#4db6ac teal-text lighter-2">Your Puppies</h1>
+    </div>
+
+    <br></br>
+
+    <div class="container center">
+      <a class="waves-effect waves-light red btn">Add Puppies</a>
+    </div>
+
+    <br></br>
+
+
+
+    <form action="/users/show/:id" method="GET" enctype="multipart/form-data">
+    </form>
+
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
