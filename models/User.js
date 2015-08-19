@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
   age: Number,
   zipCode: String,
   bio: String,
-  picture: String,
+  url: String,
   puppies: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Puppy'
