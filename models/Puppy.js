@@ -3,16 +3,12 @@ var User        = require('./User');
 
 var PuppySchema = new mongoose.Schema({
   name: String,
-  age: Number,
+  age: Date,
   therapy: Boolean,
   friendliness: String,
   hypoallerginc: Boolean,
   url: String,
-  size: String,
-  users: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  }]
+  size: String
 });
 
 
