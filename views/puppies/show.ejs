@@ -4,13 +4,26 @@
   <body>
     <%- include ../partials/nav.ejs %>
     <div class="container center-align">
-      <h1 class="teal lighten-1 white-text z-depth-3">
-        User Profile
-      </h1>
-
-      <form action="/puppies/show/:id" method="GET" enctype="multipart/form-data">
-
-    </div>
+      <div class="row">
+        <div class="col 6">
+          <div class="card medium">
+            <div class="card-image">
+              <img src="http://www.studentsoftheworld.info/sites/animals/img/28051_puppy4.jpg"/>
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p><%= puppy.name %></p>
+              <p><%= puppy.age %></p>
+              <p><%= puppy.therapy %>
+              <p><%= puppy.friendliness %></p>
+              <p><%= puppy.size %></p>
+            </div>
+            <div class="contact-puppy">
+              <a href="puppies/:id/edit">Edit your Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
     <%- include ../partials/footer_js.ejs %>
   </body>
 </html>
