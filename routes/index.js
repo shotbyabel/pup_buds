@@ -50,8 +50,8 @@ router.post('/login', SessionsController.sessionCreate);
 
 
 //renders puppies controller
-router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 router.get('/puppies/new', PuppiesController.renderPuppiesNew);
+router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 router.get('/puppies/:id', PuppiesController.renderPuppiesEdit);
 router.post('/puppies', PuppiesController.renderPuppiesCreate);
 
