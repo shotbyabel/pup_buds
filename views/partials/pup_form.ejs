@@ -5,6 +5,7 @@
         <div class="input-field col s12">
           <form action="/puppies" method="POST" enctype="multipart/form-data">
 
+
           <input name="puppy[name]" id="puppy_name" type="text" class="validate" placeholder="puppy name">
         </div>
         <div class="input-field col s12">
@@ -14,7 +15,8 @@
         <br>
         <div class="row">
           <h5 class="pup-photo">Puppy profile photo</h5>
-        <input name="puppy[photo]" type="string">
+        <input name="puppy[photo]" type="string" name="puppy[url]">
+
         </div>
         <div class="row">
           <div class="input-field col s12">
@@ -52,7 +54,7 @@
             <h4>Therapy?</h4>
             <br>
             <p>
-            <input name="puppy[hypoallergenic]" type="checkbox" id="yes"/>
+            <input name="puppy[therpay]" type="checkbox" id="yes"/>
             <label id="yes" for="yes">yes</label>
             </p>
             <br>
