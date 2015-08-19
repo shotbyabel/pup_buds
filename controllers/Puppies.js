@@ -1,25 +1,18 @@
 var Puppy = require('../models/Puppy');
 
+module.exports.renderPuppiesNew = function(req,res){
+  res.render('puppies/new');
+};
+
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
-    res.render(
-      'puppies/show',
+    res.render('/puppies/show',
       { title: 'Pup Buds',
         show: true,
         puppy: puppy
       }
     );
   });
-};
-
-module.exports.renderPuppiesNew = function(req,res,next){
-  res.render(
-    'puppies/new',
-    {
-      title: 'Pup Buds',
-      show: true
-    }
-  );
 };
 
 
