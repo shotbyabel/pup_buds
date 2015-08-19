@@ -7,19 +7,22 @@ module.exports.renderPuppiesIndex = function(req, res, next){
       puppies: puppies
     });
   });
-}
-
-module.exports.renderPuppiesCreate = function(req,res,next){
-  Puppy.create(req.body.puppy, function (err, puppy){
-    if (err) res.send('>' + err);
-
-    res.redirect('/puppies' + puppy.id);
-  });
 };
 
 module.exports.renderPuppiesNew = function(req,res){
   res.render('puppies/new');
 };
+
+module.exports.renderPuppiesCreate = function(req,res,next){
+  Puppy.create(req.body.puppy, function (err, puppy){
+    if(err){
+      res.send('>' + err);
+    }else{
+      res.redirect('/puppies');
+    };
+   });
+ };
+
 
 module.exports.renderPuppiesEdit = function(req,res,next){
   res.render(
