@@ -12,14 +12,16 @@
               <span class="card-title"></span>
             </div>
             <div class="card-content">
-              <p><%= puppy.name %></p>
-              <p><%= puppy.age %></p>
-              <p><%= puppy.therapy %>
-              <p><%= puppy.friendliness %></p>
-              <p><%= puppy.size %></p>
+            
+              <% puppy.name %> 
+              <% puppy.age %> 
+              <% puppy.therapy %> 
+              <% puppy.friendliness %>
+              <% puppy.size %> 
+              <img src="<%= puppy.url%>" alt="">
             </div>
             <div class="contact-puppy">
-              <a href="puppies/:id/edit">Edit your Profile</a>
+           <!--    <a href="puppies/:id/edit">Edit --> your Profile</a>
             </div>
           </div>
         </div>
