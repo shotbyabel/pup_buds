@@ -42,12 +42,6 @@ var userShow = function(req, res, next){
   });
 };
 
-// var userShow = function(req, res, next){
-//  User.findById(req.params.id).populate("puppies").exec(function(error, users){
-//         res.render('users/show', {user: req.user});
-
-//  });
-// };
 
 
 
