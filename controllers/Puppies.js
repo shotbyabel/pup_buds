@@ -30,7 +30,7 @@ module.exports.renderPuppiesCreate = function(req,res,next){
   puppy.save(function(error){
     if(error){
       res.send('> ' + err);
-      res.redirect('users/show', {user: req.user});
+      res.redirect('/puppies');
     }
   })
 };
