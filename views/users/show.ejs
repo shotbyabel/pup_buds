@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <%- include ../partials/head.ejs %>
+  <head>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../stylesheets/css/register.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../stylesheets/css/materialize.min.css"  media="screen,projection"/>
+  </head>
+
   <body>
-    <%- include ../partials/nav.ejs %>
+    <%- include ../partials/navbar.ejs %>
     <div class="container center-align">
-      <h1 class="teal lighten-1 white-text z-depth-3">
-        User Profile
-      </h1>
+      <h1 class="#4db6ac teal-text lighten-2">User Profile</h1>
 
       <form action="/users/show/:id" method="GET" enctype="multipart/form-data">
-        <%- include ../partials/form.ejs %>
       </form>
     </div>
-    <%- include ../partials/footer_js.ejs %>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>
