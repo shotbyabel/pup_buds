@@ -23,15 +23,13 @@
       </ul>
     </div>
   </nav>
-  <div class="container row cols s12">
-    <h1 class="teal teal lighten-1 white-text z-depth-1 white-text 
-    z-depth-3 center align">Add Puppy Profile</h1>
-
-
-
-
-
-     <a class="waves-effect waves-light btn" type="submit">add puppy</a>
+  <div class="container center-align row cols s12">
+    <h1>Add Puppy</h1>
+    <form action="/puppies/new" method="POST" enctype="multipart/form-data">
+      <% include ../partials/pup_form %>
+    </form>
+  </div>
+  <%- include ../partials/footer_js.ejs %>
 
 </body>
 </html>
