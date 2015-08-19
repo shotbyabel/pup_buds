@@ -57,8 +57,8 @@ router.post('/login', SessionsController.sessionCreate);
 
 //renders puppies controller
 router.get('/puppies', PuppiesController.renderPuppiesIndex);
-router.post('/puppies', PuppiesController.renderPuppiesCreate);
 router.get('/puppies/new', PuppiesController.renderPuppiesNew);
+router.post('/puppies', PuppiesController.renderPuppiesCreate);
 router.get('/puppies/:id', PuppiesController.renderPuppiesEdit);
 router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 
@@ -66,7 +66,7 @@ router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 //renders users contoller
 router.get('/auth/register', UsersController.usersNew);
 router.post('/auth/register', UsersController.usersCreate);
-router.get('/users/show', UsersController.userShow);
+router.get('/users/:id', UsersController.userShow);
 module.exports = router;
 
 
