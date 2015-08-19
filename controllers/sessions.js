@@ -13,7 +13,7 @@ function sessionNew  (req, res) {
   function sessionCreate (req, res, next) {
     req.session.save(function (err) {
       if (err) return next(err);
-      res.redirect('/');
+      res.redirect('/puppies');
     });
   };
 

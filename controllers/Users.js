@@ -36,6 +36,7 @@ function usersCreate (req, res) {
           return next(err);
         }
         res.redirect('/users/show/'); //+ id here?
+          // res.redirect('/users/' + req.user.id);
       });
     });
   });
