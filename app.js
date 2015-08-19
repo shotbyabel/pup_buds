@@ -5,11 +5,11 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 
 // require modules for mongoose and passport
-var mongoose = require('mongoose');
 var passport= require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var routes = require('./routes/index');

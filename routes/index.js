@@ -1,12 +1,18 @@
 var express           = require('express');
 var router            = express.Router();
 var passport          = require('passport');
+var User              = require('../models/User');
 var PuppiesController = require('../controllers/Puppies');
 var SessionsController= require('../controllers/Sessions');
 var UsersController   = require('../controllers/Users');
+
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Pup Buds' });
+// router.get('/', function (req, res, next) {
+//   res.render('index', { title: 'Pup Buds' });
+// });
+//passport middleware will add autheticated user to every req.
+router.get('/', function (req, res) {
+  res.render('index', {user: req.user});
 });
 
 

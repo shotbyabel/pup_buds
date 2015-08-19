@@ -1,31 +1,33 @@
+<!-- <form action="/auth/register" method="POST" enctype="multipart/form-data"> -->
+<form action="/auth/register" method="POST">
 <div class="row">
   <div class="input-field col s12">
-    <input placeholder="name" name="user[name]"id="name" type="text" class="validate
+    <input placeholder="name" name="name" id="name" type="text" class="validate">
   </div>
   <div class="input-field col s12">
-    <input name="user[email]" id="email" type="text" class="validate" placeholder="email">
+    <input name="username" id="username" type="email" class="validate" placeholder="email">
   </div>
   <div class="input-field col s12">
-    <input name="user[city]" id="city" type="text" class="validate" placeholder="city">
+    <input name="city" id="city" type="text" class="validate" placeholder="city">
   </div>
   <div class="input-field col s6">
-    <input name="user[zipCode]" id="zipCode" type="text" class="validate" placeholder="zipcode">
+    <input name="zipCode" id="zipCode" type="text" class="validate" placeholder="zipcode">
   </div>
   <div class="input-field col s6">
-    <input name="user[age]" id="age" type="text" class="validate" placeholder="age">
+    <input name="age" id="age" type="text" class="validate" placeholder="age">
   </div>
   <div class="input-field col s12">
-    <input name="user[password]" id="password" type="text" class="validate" placeholder="password">
+    <input name="password" id="password" type="text" class="validate" placeholder="password">
   </div>
   <br>
   <h5>Describe yourself</h5>
   <i class="material-icons prefix left">mode_edit</i>
   <div class="input-field col s12 left">
-    <textarea name="user[bio]" id="textarea1" class="materialize-textarea" placeholder="description"></textarea>
+    <textarea name="bio" id="textarea1" class="materialize-textarea" placeholder="description"></textarea>
   </div>
   <div class="file-field input-field col s12">
     <h5>Profile Photo</h5>
-    <input class="file-path validate" type="text"/>
+    <input class="file-path validate" name="picture" type="text"/>
     <div class="btn center- align red accent-2">
       <span>File</span>
       <input type="file" />
@@ -34,4 +36,5 @@
     <button class="btn waves-effect waves-light btn-sent register-btn red accent-2 z-depth-2" type="submit" name="action">Submit<i class="material-icons red lighten-2"></i></button>
   </div>
 </div>
+</form>
  

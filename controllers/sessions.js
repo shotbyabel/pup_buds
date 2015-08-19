@@ -9,11 +9,7 @@ function sessionNew  (req, res) {
 };
 
 //Post actually logs in
-function sessionCreate (req,res) {passport.authenticate,
-  'local'}
-  {
-    failureRedirect: '/login'
-  }
+//double check this withOUt sessions Create..
   function sessionCreate (req, res, next) {
     req.session.save(function (err) {
       if (err) return next(err);
