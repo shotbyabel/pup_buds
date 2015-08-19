@@ -5,18 +5,7 @@ var router = express.Router();
 
 
 
-var userShow = function(req, res, next){
-    User.findById(req.params.id)
-      .then(function(user) {
-        res.render(
-          'users/show',
-          {
-           user:req.user
-          });
-        }, function(err) {
-          return next(err);
-        });
-      };
+
 
 //new User
 function usersNew  (req, res) {
@@ -25,7 +14,7 @@ function usersNew  (req, res) {
 
 function usersCreate (req, res) {
   User.register(new User({
-    username: req.body.username, 
+    username: req.body.username,
     name: req.body.name
   }), req.body.password, function(err, user) {
     // if (err) { console.log(err); return res.render('auth/register', {user: user}); }
@@ -35,11 +24,22 @@ function usersCreate (req, res) {
         if (err) {
           return next(err);
         }
-        res.redirect('/users/show/'); //+ id here?
+        res.redirect('/users/' + req.user.id); //+ id here?
       });
     });
   });
 };
+
+var userShow = function(req, res, next){
+ User.findById(req.params.id).populate("puppies").exec(function(error, users){
+        res.render('users/show', {user: req.user});
+
+ });
+};
+
+
+
+
 
 
 module.exports = {

@@ -28,7 +28,7 @@
 
         <div class="col s4 center teal">
           <h8 class="blue-text">Name</h8>
-          <p>Sam Claney</p>
+          <p><%= user.name %></p>
         </div>
 
       </div>
@@ -44,7 +44,7 @@
 
         <div class="col s4 center teal">
           <h8 class="blue-text">Zip</h8>
-          <p>90210</p>
+          <p><%= user.zipCode %></p>
         </div>
 
       </div>
@@ -53,7 +53,7 @@
 
         <div class="col s12 center teal">
           <h8 class="blue-text">Bio</h8>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nulla consectetur esse earum perspiciatis, molestias qui quae. Ab earum, velit deserunt ipsa facilis, enim dolore vero nostrum amet officia excepturi.</p>
+          <p><%= user.bio %></p>
         </div>
 
       </div>
@@ -72,11 +72,15 @@
 
      <div class="row container">
         <div class="col s12 m6">
+
+
+        <% user.puppies.forEach(function(puppy){ %>
           <div class="card">
             <div class="card-image">
               <img src="/images/tree_sniff.gif">
               <span class="card-title">Shadow</span>
             </div>
+
             <div class="card-content">
               <p>Shadow is a very good boy</p>
             </div>
@@ -89,6 +93,7 @@
           </div>
         </div>
       </div>
+    <% });%>
 
     <!-- end of puppy stuff -->
 
