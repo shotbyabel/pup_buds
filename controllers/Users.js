@@ -28,7 +28,6 @@ function usersCreate (req, res) {
     username: req.body.username, 
     name: req.body.name
   }), req.body.password, function(err, user) {
-
     // if (err) { console.log(err); return res.render('auth/register', {user: user}); }
     if (err) return res.render('auth/register', {user: user});
     passport.authenticate('local')(req, res, function () {
