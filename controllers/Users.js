@@ -31,11 +31,17 @@ function usersCreate (req, res) {
 };
 
 var userShow = function(req, res, next){
- User.findById(req.params.id).populate("puppies").exec(function(error, users){
-        res.render('users/show', {user: req.user});
+  var id = req.params.id;
 
- });
+  User.findById({_id:id}, function(error, user){
+    if (error) res.json({message: 'Could not find user because ' + error});
+    res.render(
+      './users/show', {
+        user: req.user
+      });
+  });
 };
+
 
 
 
