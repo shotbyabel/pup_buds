@@ -31,6 +31,9 @@
 
     <div class="container center">
       <a class="waves-effect waves-light red btn" href="/users/<%= user.id %>/edit">Edit Profile</a>
+          <form method="POST" action="/users/<%= user._id %>?_method=DELETE">
+           <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" name="action">Delete Profile</button>
+         </form>
     </div>
 
     <!-- page seperator -->

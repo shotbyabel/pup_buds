@@ -100,6 +100,14 @@ var userUpdate = function(req, res, next) {
   });
 };
 
+ var userDelete = function(req,res){
+  var id = req.params.id;
+
+  User.findByAndRemove({_id: id}, function(error){
+    if (error) res.send(error);
+    res.redirect('/')
+  });
+ };
 
 
 module.exports = {
@@ -109,7 +117,8 @@ module.exports = {
     usersCreate:   usersCreate,
     userShow:      userShow,
     userEdit:      userEdit,
-    userUpdate:    userUpdate
+    userUpdate:    userUpdate,
+    userDelete:    userDelete
 
 };
 
