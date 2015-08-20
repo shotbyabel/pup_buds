@@ -21,7 +21,7 @@
             <h3 class="card-title activator grey-text text-darken-4"><%= puppy.name %></h3><i class="material-icons right">more_vert</i>
             <br>
 
-           <p><a class="teal darken-4 btn" href="/puppies/puppy/edit">Edit Your Puppy</a></p>
+           <p><a class="teal darken-4 btn" href='/puppies/<%= puppy._id %>/edit'>Edit Your Puppy</a></p>
 
             <form method="POST" action="/puppies/<%= puppy._id %>?_method=DELETE">
 
