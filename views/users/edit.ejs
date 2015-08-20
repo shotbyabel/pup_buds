@@ -8,37 +8,38 @@
     <link href="../../stylesheets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../../stylesheets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../../stylesheets/css/materialize.min.css"  media="screen,projection"/>
-</head>
+  </head>
+
+  <!-- form data for editing -->
    <div class="container center-align">
-    <form action="/edit" method="POST" enctype="multipart/form-data">
+    <form action="/users/<%= user._id %>?_method=PUT" method="POST">
       <h1 class="#4db6ac teal-text lighten-2">User Profile</h1>
 
         <div class="row">
 
           <div class="input-field col s12">
             <input placeholder="<%= user.name %>" name="name" id="name" type="text" class="validate">
+            <label for="name">name</label>
           </div>
 
           <div class="input-field col s6">
             <input placeholder="<%= user.zipCode %>" name="zipCode" id="zipCode" type="text" class="validate">
+            <label for="zipcode">zipcode</label>
           </div>
 
           <div class="input-field col s6">
             <input placeholder="<%= user.age %>" name="age" id="age" type="text" class="validate">
+            <label for="age">age</label>
           </div>
 
-          <br>
-
-          <h5>Describe yourself</h5>
-
-          <i class="material-icons prefix left">mode_edit</i>
+          <h5>Your Bio</h5>
 
           <div class="input-field col s12 left">
             <textarea name="bio" id="textarea1" class="materialize-textarea" placeholder="<%= user.bio %>"></textarea>
           </div>
 
           <div class="input-field col s12">
-            <h5>Profile Photo</h5>
+            <h5>Your Photo</h5>
             <input placeholder="<%= user.url %>" name="url" id="url" type="text" class="validate">
           </div>
 

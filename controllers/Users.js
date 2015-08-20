@@ -5,6 +5,7 @@ var router = express.Router();
 // REQUIRE PASSPORT
 //||||||||||||||||||||||||||--
 var passport = require('passport');
+var methodOverride = require('method-override');
 
 //||||||||||||||||||||||||||--
 // REQUIRE MODEL
@@ -69,6 +70,26 @@ var userEdit = function(req, res, next){
 };
 
 
+var userUpdate = function(req, res, next) {
+  var id = req.params.id;
+
+  User.findById({_id: id}, function(error, user) {
+    if (error) res.json({message: 'Could not find user because ' + error});
+
+    if (req.body.name) user.name = req.body.name;
+    if (req.body.age) user.age = req.body.age;
+    if (req.body.bio) user.bio = req.body.bio;
+    if (req.body.zipCode) user.zipCode = req.body.zipCode;
+    if (req.body.url) user.url = req.body.url;
+
+    user.save(function(error) {
+      if (error) res.json({message: 'User successfully updated'});
+      res.redirect('/users/' + id);
+    });
+  });
+};
+
+
 
 
 module.exports = {
@@ -76,7 +97,8 @@ module.exports = {
     usersNew:      usersNew,
     usersCreate:   usersCreate,
     userShow:      userShow,
-    userEdit:      userEdit
+    userEdit:      userEdit,
+    userUpdate:    userUpdate
 
 };
 
