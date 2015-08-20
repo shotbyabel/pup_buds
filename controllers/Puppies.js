@@ -30,53 +30,40 @@ module.exports.renderPuppiesCreate = function(req,res,next){
   puppy.save(function(error){
     if(error){
       res.send('> ' + err);
-      res.render('/puppies');
+      res.redirect('/puppies');
     }
-  })
+  });
 };
 
-// module.exports.renderPuppiesCreate = function(req,res,next){
-//   var puppy = new Puppy();
-//   puppy.name = req.body.name;
-//   puppy.age = req.body.age;
-//   puppy.therapy = req.body.therapy;
-//   puppy.friendliness = req.body.friendliness;
-//   puppy.hypoallergenic = req.body.hypoallergenic;
-//   puppy.size = req.body.size;
-
-//   puppy.save(function(error, puppy){
-//     if (error) return res.send(error);
-//     res.send(puppy);
-//   });
-// };
 
 module.exports.renderPuppiesEdit = function(req,res,next){
-  res.render(
-    'puppies/edit');
-  Puppy.findById(function(error,puppy) {
-    if (err) res.send('>' + err);
-
-    if(req.body.name) puppy.name                     = req.body.name;
-    if(req.body.age) puppy.age                       = req.body.age;
-    if(req.body.therapy) puppy.therapy               = req.body.therapy;
-    if(req.body.friendliness) puppy.friendliness     = req.body.friendliness;
-    if(req.body.hypoallergenic) puppy.hypoallergenic = req.body.hypoallergenic;
-    if(req.body.size) puppy.size                     = req.body.size;
-
-    puppy.save(function(error){
-      if (err) res.send('>' + err);
-
+  Puppy.findOne(req.params.id, function(error, puppy){
+    if(error) return res.send(error);
+    res.render('puppies/edit', {
+      puppy: puppy
     });
-  })
+  });
 };
+
+ module.exports.renderPuppiesUpdate = function(req,res,next){
+  Puppy.update(req.params.id,{
+    name: req.body.name,
+    age: req.body.age,
+    therapy: req.body.therapy,
+    friendliness: req.body.friendliness,
+    hypoallergenic: req.body.hypoallergenic,
+    size: req.body.size
+  }, function(error){
+    if (error) res.send(error);
+    res.redirect('/puppies');
+  });
+};
+
 
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
-    res.render('/puppies/show',
-      { title: 'Pup Buds',
-        show: true,
-        puppy: puppy
-      }
-    );
+    if (err) return res.send(error);
+    var puppy = {puppy:puppy}
+    res.render('puppies/show');
   });
 };
