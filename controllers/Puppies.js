@@ -39,9 +39,7 @@ module.exports.renderPuppiesCreate = function(req,res,next){
 module.exports.renderPuppiesEdit = function(req,res,next){
   Puppy.findOne(req.params.id, function(error, puppy){
     if(error) return res.send(error);
-    res.render('puppies/edit', {
-      puppy: puppy
-    });
+    res.render('puppies/edit');
   });
 };
 
