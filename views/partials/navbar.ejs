@@ -4,14 +4,12 @@
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="#">Messages</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="/users/:id">Profile</a></li>
+      <li><a href="/users/<%= user.id %>">Profile</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="#">Messages</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="/users/:id">Profile</a></li>
+      <li><a href="/users/<%= user.id %>">Profile</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
   </div>
