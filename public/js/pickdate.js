@@ -7,7 +7,7 @@ $('.datepicker').pickadate({
 }); 
 
 document.getElementById('puppy-save').onclick = function(){
-  swal("Good job!", "You clicked the button!", "success");
+  swal("Good job!", "You added a new puppy!", "success");
 };
 
 $('.dropdown-button').dropdown({
