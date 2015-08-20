@@ -18,7 +18,8 @@ var PuppySchema = new mongoose.Schema({
   url:            String,
   size:           String,
   user: {
-      type: mongoose.Schema.Types.ObjectId, ref: 'User'
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
   }
 });
 
