@@ -6,10 +6,39 @@ $('.datepicker').pickadate({
   });
 }); 
 
+// creates an alert message when user adds a new puppy
 document.getElementById('puppy-save').onclick = function(){
-  swal("Good job!", "You clicked the button!", "success");
+  swal("Good job!", "You added a new puppy!", "success");
 };
 
+// facebook login
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '149730395363094',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+(function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+// check if the username input is less than 5 characters
+var elMsg = document.getElementById('username').onClick = function checkUsername(){
+  if(this.value.length < 5) {
+    elMsg.textContent = swal('Username must be at least 5 characters or more');
+  } else { 
+    elMsg.textContent = '';
+   }
+};
+
+// drop down menu for the navbar
 $('.dropdown-button').dropdown({
       inDuration: 300,
       outDuration: 225,
@@ -20,9 +49,6 @@ $('.dropdown-button').dropdown({
     }
   );
 
-// Initialize collapse button
-  $(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  //$('.collapsible').collapsible();
+
         
 
