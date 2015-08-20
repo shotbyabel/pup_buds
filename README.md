@@ -7,12 +7,12 @@
 
 **ABOUT**
 
-*"an app that temporarily matches puppies with people who love them"*
+*"Find your best friend's best friend"*
 
 __________________
 **TEAM MEMBERS**
 
-- Ezra *(Manager and resident JavaScript expert)*)
+- Ezra *(Manager and resident JavaScript expert)*
 - Sam *Front End*
 - Rachelle *Front End*
 - Meghan *Back End*
