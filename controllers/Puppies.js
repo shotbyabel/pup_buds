@@ -34,18 +34,15 @@ module.exports.renderPuppiesCreate = function(req,res,next){
     friendliness:   req.body.friendliness,
     hypoallergenic: req.body.hypoallergenic,
     url:            req.body.url,
-    size:           req.body.size
+    size:           req.body.size,
+    user:           req.user
   });
   console.log(req.body);
   puppy.save(function(error){
-    if(error){
-      res.send('> ' + err);
-      res.render('/users/:id', {
-        puppies: puppies,
-        user: req.user
-      });
-    }
-    res.redirect('/puppies/' + req.user.id)
+    if(error){res.send('> ' + err);}
+    req.user.puppies.push(puppy);
+    req.user.save();
+    res.redirect('/puppies/' + puppy.id)
   });
 };
 
@@ -74,7 +71,8 @@ module.exports.renderPuppiesEdit = function(req,res,next){
 
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
+    console.log('puppy', puppy);
     if (err) return res.send(err);
-    res.render('puppies/show', {user: req.user, puppy: req.puppy});
+    res.render('puppies/show', {user: req.user, puppy: puppy});
   });
 };
