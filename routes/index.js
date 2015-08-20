@@ -3,7 +3,7 @@ var router            = express.Router();
 var passport          = require('passport');
 var User              = require('../models/User');
 var PuppiesController = require('../controllers/Puppies');
-var SessionsController= require('../controllers/Sessions');
+var SessionsController= require('../controllers/sessions');
 var UsersController   = require('../controllers/Users');
 
 /* GET home page. */
@@ -45,14 +45,24 @@ router.get('/auth/twitter/callback', passport.authenticate('twitter', {
   failureRedirect: '/login'
 }));
 
+var isLoggedIn = function(req, res, next) {
+  if (!req.isAuthenticated()) {
+    res.redirect('/login');
+  }
+  return next();
+};
 
 
 
 //renders sesssions controller
-router.get('/login', SessionsController.sessionNew);
-router.get('/logout', SessionsController.sessionDelete);
-router.get('/secret', SessionsController.sessionShow);
-router.post('/login', SessionsController.sessionCreate);
+router.get('/login', SessionsController.sessionsNew);
+router.post('/login', passport.authenticate(
+  'local',
+  {
+    failureRedirect: '/login'
+  }), SessionsController.sessionsCreate);
+router.get('/logout', SessionsController.sessionsDelete);
+//router.get('/secret', SessionsController.sessionsShow);
 
 
 //renders puppies controller
@@ -69,6 +79,7 @@ router.get('/auth/register', UsersController.usersNew);
 router.post('/auth/register', UsersController.usersCreate);
 router.get('/users/:id', UsersController.userShow);
 module.exports = router;
+<<<<<<< HEAD
 
 
 
@@ -252,3 +263,5 @@ module.exports = router;
 // }
 
 // module.exports = router;
+=======
+>>>>>>> 6cc8a9e1ce810282f75766c0a5cb829abf11d611

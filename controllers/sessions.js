@@ -4,47 +4,50 @@ var User = require('../models/User');
 var router = express.Router();
 
 //GET '/login'
-function sessionNew  (req, res) {
+function sessionsNew  (req, res) {
   res.render('auth/login', {user : req.user});
 };
 
 //Post actually logs in
 //double check this withOUt sessions Create..
-  function sessionCreate (req, res, next) {
+function sessionsCreate (req, res, next) {
     req.session.save(function (err) {
       if (err) return next(err);
-      res.redirect('/users/:id');
+      res.redirect('/users/' + req.user.id);
     });
   };
 
 
 //GET '/logout'
-function sessionDelete  (req, res) {
-  req.logout();
-  res.redirect('/');
+function sessionsDelete  (req, res) {
+  // req.logout();
+  // res.redirect('/');
+  req.session.destroy(function(err){
+    res.redirect('/');
+  })
 };
 
-//GET /'secret'
-function sessionShow (req, res) {isLoggedIn,
-  res.render('secret', {user: req.user});
-};
+// //GET /'secret'
+// function sessionsShow (req, res) {isLoggedIn,
+//   res.render('secret', {user: req.user});
+// };
 
 // middleware to make sure a user is logged in
-function isLoggedIn (req, res, next) {
-  // if user is authenticated in the session, carry on
-  if (req.isAuthenticated())
-    return next();
-  // if they aren't redirect them to the login page
-  res.redirect('/login');
-}
+// function isLoggedIn (req, res, next) {
+//   // if user is authenticated in the session, carry on
+//   if (req.isAuthenticated())
+//     return next();
+//   // if they aren't redirect them to the login page
+//   res.redirect('/login');
+// }
 
 // router.get('/login', function
 //session create
 // router.get('/logout', function
 
 module.exports = {
-  sessionNew: sessionNew,
-  sessionCreate: sessionCreate,
-  sessionShow:   sessionShow,
-  sessionDelete:  sessionDelete
+  sessionsNew: sessionsNew,
+  sessionsCreate: sessionsCreate,
+  // sessionsShow:   sessionsShow,
+  sessionsDelete:  sessionsDelete
 };
