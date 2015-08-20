@@ -6,13 +6,18 @@
         <input name="puppy[name]" id="puppy_name" type="text" class="validate" placeholder="puppy name">
       </div>
       <div class="input-field col s12">
-        <input name="puppy[age]" id="puppy_age" type="date" class="datepicker validate" placeholder="puppy age">
+          <input name="puppy[therapy]" type="text" id="therapy" class="validate" placeholder="puppy therapy">
+          
+        </div>
+      <div class="input-field col s12">
+        <input name="puppy[age]" id="puppy_age" type="date" class="datepicker" placeholder="puppy age">
       </div>
+      
       <br>
       <br>
       <div class="row">
-        <h5 class="pup-photo">Puppy profile photo</h5>
-        <input name="puppy[photo]" type="string" name="puppy[url]">
+        <h5 class="pup-photo">Puppy photo url</h5>
+        <input name="puppy[url]" type="string" class="photo" style="width: 270px; height: 50px">
       </div>
       <div class="row">
         <div class="input-field col s12">
@@ -35,7 +40,7 @@
           <br>
           </div>
        
-          <div class="col s6">
+          <div class="col s6 center-align">
             <h4>Hypoallergenic?</h4>
             <p>
               <input name="puppy[hypoallergenic]" type="checkbox"  id="yes"/>
@@ -46,24 +51,10 @@
               <label id="no" for="no">
               no</label>
             </p>
-          </div>
-          <div class="col s6">
-            <h4>Therapy?</h4>
-            <p>
-            <input name="puppy[therapy]" type="checkbox"  id="yes"/>
-            <label id="yes" for="yes">yes</label>
-           </p>
-           <p>
-            <input name="puppy[hypoallergenic]" type="checkbox" id="no"/>
-            <label id="no" for="no">
-              no</label>
-            </p>
-            <br>
             <br>
           </div>
           <div class="action row">
-
-            <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" value= "Save Puppy" name="action">Add Puppy</button>
+            <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" id="puppy-save"value= "Save Puppy" name="action">Add Puppy</button>
           </div>
         </div>
       </div>
