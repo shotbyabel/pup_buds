@@ -1,25 +1,39 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-// get our connection to the socket.io server
-var socket = io(getNamespaceName());
-var mainSocket = io();
-console.log(mainSocket);
-mainSocket.emit('register-chat', {
-  namespace: getNamespaceName()
-});
+  function getNamespace(me, otherUser) {
+    var ns;
+    if( me < otherUser) {
+      ns = '/' + me + '-' + otherUser;
+    } else {
+      ns = '/' + otherUser + '-' + me;
+    };
+    return ns;
+  };
 
-});
+  var ns = getNamespace(me, otherUser);
+  var socket = io();
 
+  socket.emit('register-chat', ns);
 
+  socket.on('private-message', function(msg){
+    var s = msg.sender + " > " + msg.receiver + ": " + msg.message;
+    $('#messages').append($('<li>').text(s));
+    console.log(msg);
+  });
 
+  function sendMessage(message) {
+    console.log(socket);
+    socket.emit("private-message", {
+      sender: me,
+      receiver: otherUser,
+      message: message
+    });
+  };
 
-function getNamespaceName(){
-  if(thisUsername < otherUsername) {
-    return "/" + thisUsername + "|" + otherUsername;
-  } else {
-    return "/" + otherUsername + "|" + thisUsername;
-  }
-}
+  $('form').submit(function(){
+    sendMessage($('#m').val());
+    $('#m').val('');
+    return false;
+  });
 
-
-// MAKE SURE EMAILS ARE CHANGED TO LOWERCASE!!!!
+})

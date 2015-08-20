@@ -5,11 +5,13 @@ var router = express.Router();
 // REQUIRE PASSPORT
 //||||||||||||||||||||||||||--
 var passport = require('passport');
+var methodOverride = require('method-override');
 
 //||||||||||||||||||||||||||--
 // REQUIRE MODEL
 //||||||||||||||||||||||||||--
-var User = require('../models/User');
+var User    = require('../models/User');
+var Message = require('../models/Message');
 
 //||||||||||||||||||||||||||--
 // NEW USER
@@ -21,6 +23,16 @@ function usersNew  (req, res) {
 //||||||||||||||||||||||||||--
 // ADD USER TO DATABASE
 //||||||||||||||||||||||||||--
+var usersChat = function(req, res, next) {
+  User.findOne({_id: req.params.id}, function(err, userTwo) {
+    Message.find({$or: [{$and: [{sender: req.user.username}, {receiver: userTwo.username}]},
+                        {$and: [{sender: userTwo.username}, {receiver: req.user.username}]}]},
+                        function(err, messages) {
+                          res.render('users/chat', {title: 'Pup Buds', user: userTwo, userOne: req.user, messages: messages});
+                        })
+  });
+};
+
 function usersCreate (req, res) {
   User.register(new User({
     username: req.body.username,
@@ -69,14 +81,35 @@ var userEdit = function(req, res, next){
 };
 
 
+var userUpdate = function(req, res, next) {
+  var id = req.params.id;
+
+  User.findById({_id: id}, function(error, user) {
+    if (error) res.json({message: 'Could not find user because ' + error});
+
+    if (req.body.name) user.name = req.body.name;
+    if (req.body.age) user.age = req.body.age;
+    if (req.body.bio) user.bio = req.body.bio;
+    if (req.body.zipCode) user.zipCode = req.body.zipCode;
+    if (req.body.url) user.url = req.body.url;
+
+    user.save(function(error) {
+      if (error) res.json({message: 'User successfully updated'});
+      res.redirect('/users/' + id);
+    });
+  });
+};
+
 
 
 module.exports = {
 
+    usersChat:     usersChat,
     usersNew:      usersNew,
     usersCreate:   usersCreate,
     userShow:      userShow,
-    userEdit:      userEdit
+    userEdit:      userEdit,
+    userUpdate:    userUpdate
 
 };
 
