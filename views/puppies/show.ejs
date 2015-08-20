@@ -9,20 +9,25 @@
   <link type="text/css" rel="stylesheet" href="../styleheets/css/materialize.min.css"  media="screen,projection"/>
 </head>
   <body>
-    <%- include ../partials/navbar.ejs %> 
+    <%- include ../partials/navbar.ejs %>
     <div class="container center-align">
        <h1 class="#4db6ac teal-text lighter-2">Puppy Profile</h1>
        <div class="card z-depth-2">
           <div class="card-image waves-effect waves-block waves-light">
-             
+
           </div>
           <img class="activator" style="width:400px; height:400px" src="<%= puppy.url%>" alt="">
           <div class="card-content">
             <h3 class="card-title activator grey-text text-darken-4"><%= puppy.name %></h3><i class="material-icons right">more_vert</i>
             <br>
-               
-             
-           <p><a class="teal darken-4 btn" href="/puppies/<%= puppy.id %>/edit">Edit Your Puppy</a></p>
+
+           <p><a class="teal darken-4 btn" href="/puppies/puppy/edit">Edit Your Puppy</a></p>
+
+            <form method="POST" action="/puppies/<%= puppy._id %>?_method=DELETE">
+
+           <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" name="action">DeletePuppy</button>
+         </form>
+
           </div>
           <div class="card-reveal">
             <span class="card-title activator grey-text text-darken-4"> <%= puppy.name %><i class="material-icons right">close</i></span>
@@ -37,16 +42,17 @@
             <h6> Meet my owner: <% user.url %></h6>
 
             <br>
+
+
+
             <div id="puppy-edit">
-            <a class="btn red darken-3" href="/puppies">Delete Puppy</a>
+
           </div>
-          
-            
-            
+
         </div>
       </div>
   </div>
-  <%- include ../partials/feeter %> 
+  <%- include ../partials/feeter %>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../js/materialize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
