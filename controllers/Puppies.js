@@ -10,16 +10,19 @@ var User = require('../models/User');
 var router = express.Router();
 
 module.exports.renderPuppiesIndex = function(req, res, next){
-  Puppy.find({}, function(err, puppies){
+  Puppy.find({}, function(err, puppies, user){
     if (err) res.send('> ' + err);
-    res.render('puppies/index', {
-      puppies: puppies
-    }, {user: req.user});
+    res.render('puppies/index',
+    {
+      puppies: puppies,
+      user: req.user
+    });
   });
 };
 
 module.exports.renderPuppiesNew = function(req,res){
-  res.render('puppies/new', {user: req.user});
+  var puppies = Puppy.all
+  res.render('/puppies', {user: req.user, puppies:puppies});
 };
 
 
@@ -33,10 +36,13 @@ module.exports.renderPuppiesCreate = function(req,res,next){
     size: req.body.size
   });
 
-  puppy.save(function(error){
+  puppy.save(function(error, puppies, user){
     if(error){
       res.send('> ' + err);
-      res.redirect('/puppies');
+      res.render('/puppies', {
+        puppies: puppies,
+        user: req.user
+      });
     }
   });
 };
@@ -67,14 +73,11 @@ module.exports.renderPuppiesEdit = function(req,res,next){
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
     if (err) return res.send(error);
-<<<<<<< HEAD
     res.render('puppies/show',
     {
       puppy: puppy
     });
-=======
     var puppy = {puppy:puppy}
     res.render('puppies/show', {user: req.user});
->>>>>>> master
   });
 };
