@@ -15,7 +15,10 @@ function usersNew  (req, res) {
 function usersCreate (req, res) {
   User.register(new User({
     username: req.body.username,
-    name: req.body.name
+    name: req.body.name,
+    zipCode: req.body.zipCode,
+    age: req.body.age,
+    bio: req.body.bio
   }), req.body.password, function(err, user) {
     // if (err) { console.log(err); return res.render('auth/register', {user: user}); }
     if (err) return res.render('auth/register', {user: user});
