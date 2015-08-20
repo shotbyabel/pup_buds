@@ -1,15 +1,15 @@
 $(document).ready(function() {
-  
+
 $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
-}); 
+});
 
 // creates an alert message when user adds a new puppy
-document.getElementById('puppy-save').onclick = function(){
-  swal("Good job!", "You added a new puppy!", "success");
-};
+// document.getElementById('puppy-save').onclick = function(){
+//   swal("Good job!", "You added a new puppy!", "success");
+// };
 
 // facebook login
 window.fbAsyncInit = function() {
@@ -33,7 +33,7 @@ window.fbAsyncInit = function() {
 var elMsg = document.getElementById('username').onClick = function checkUsername(){
   if(this.value.length < 5) {
     elMsg.textContent = swal('Username must be at least 5 characters or more');
-  } else { 
+  } else {
     elMsg.textContent = '';
    }
 };
@@ -50,5 +50,5 @@ $('.dropdown-button').dropdown({
   );
 
 
-        
+
 
