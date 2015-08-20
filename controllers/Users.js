@@ -1,17 +1,26 @@
 var express = require('express');
-var passport = require('passport');
-var User = require('../models/User');
 var router = express.Router();
 
+//||||||||||||||||||||||||||--
+// REQUIRE PASSPORT
+//||||||||||||||||||||||||||--
+var passport = require('passport');
 
+//||||||||||||||||||||||||||--
+// REQUIRE MODEL
+//||||||||||||||||||||||||||--
+var User = require('../models/User');
 
-
-
-//new User
+//||||||||||||||||||||||||||--
+// NEW USER
+//||||||||||||||||||||||||||--
 function usersNew  (req, res) {
   res.render('auth/register');
 };
 
+//||||||||||||||||||||||||||--
+// ADD USER TO DATABASE
+//||||||||||||||||||||||||||--
 function usersCreate (req, res) {
   User.register(new User({
     username: req.body.username,
