@@ -1,5 +1,9 @@
 var express           = require('express');
 var router            = express.Router();
+
+//||||||||||||||||||||||||||--
+// PASSPORT MIDDLEWARE WILL ADD AUTHETICATED USER TO EVERY REQ.
+//||||||||||||||||||||||||||--
 var passport          = require('passport');
 
 //||||||||||||||||||||||||||--
@@ -15,7 +19,7 @@ var SessionsController= require('../controllers/Sessions');
 var UsersController   = require('../controllers/Users');
 
 //||||||||||||||||||||||||||--
-//PASSPORT MIDDLEWARE WILL ADD AUTHETICATED USER TO EVERY REQ.
+// ADDING ROOT PAGE
 //||||||||||||||||||||||||||--
 router.get('/', function (req, res) {
   res.render('index', {user: req.user});
