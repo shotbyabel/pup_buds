@@ -23,14 +23,10 @@
 
            <p><a class="teal darken-4 btn" href="/puppies/puppy/edit">Edit Your Puppy</a></p>
 
-            <form action="/puppies/<%= puppy._id %>?_method=DESTROY" method="POST">
-           <a class="teal darken-4 btn" href="/puppies">Delete Your Puppy</a>
+            <form method="POST" action="/puppies/<%= puppy._id %>?_method=DELETE">
+
+           <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" name="action">DeletePuppy</button>
          </form>
-
-
-
-
-           <p><a class="teal darken-4 btn" href="/puppies/<%= puppy.id %>/edit">Edit Your Puppy</a></p>
 
           </div>
           <div class="card-reveal">
@@ -46,16 +42,13 @@
             <h6> Meet my owner: <% user.url %></h6>
 
             <br>
-<<<<<<< HEAD
 
-=======
+
+
             <div id="puppy-edit">
-            <a class="btn red darken-3" href="/puppies">Delete Puppy</a>
+
           </div>
 
-
-
->>>>>>> 9671fb8a96993d196ddeb69b2ff738f052f247ae
         </div>
       </div>
   </div>
