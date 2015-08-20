@@ -20,9 +20,11 @@
             <h3 class="card-title activator grey-text text-darken-4"><%= puppy.name %></h3><i class="material-icons right">more_vert</i>
             <br>
            <p><a class="teal darken-4 btn" href="/puppies/puppy/edit">Edit Your Puppy</a></p>
-            <form action="/puppies/<%= puppy._id %>?_method=PUT" method="POST">
-           <p><a class="teal darken-4 btn" href="/puppies/puppy/edit">Delete Your Puppy</a></p>
+
+            <form action="/puppies/<%= puppy._id %>?_method=DESTROY" method="POST">
+           <a class="teal darken-4 btn" href="/puppies">Delete Your Puppy</a>
          </form>
+
           </div>
           <div class="card-reveal">
             <span class="card-title activator grey-text text-darken-4"> <%= puppy.name %><i class="material-icons right">close</i></span>
@@ -37,8 +39,6 @@
             <h6> Meet my owner: <% user.url %></h6>
 
             <br>
-            <a class="btn red darken-3" href="/puppies">Delete Puppy</a>
-
 
         </div>
       </div>

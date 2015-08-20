@@ -101,7 +101,8 @@ module.exports.renderPuppiesShow = function(req,res,next){
 };
 
 module.exports.renderPuppiesDelete = function (req,res,next){
-  Puppy.findByIdAndRemove(req.params.id, function (error){
+  Puppy.findByIdAndRemove(req.params.id, function (error, puppy){
+    console.log(puppy);
     if(error) res.send(error);
     res.redirect('/puppies');
   });
