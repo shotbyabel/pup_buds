@@ -2,75 +2,80 @@
 <html>
   <%- include ../partials/head.ejs %>
   <body>
-  <%- include ../partials/nav.ejs %>
+
+    <%- include ../partials/nav.ejs %>
+
     <div class="container center-align">
       <h1 class="teal lighten-1 white-text z-depth-3">
         User Profile
       </h1>
-        <div class="row">
-  <div class="col s12">
-    <div class="row">
-      <div class="container">
-        <div class="input-field col s12">
-          <form action="/puppies/_id" method="PUT" enctype="multipart/form-data">
+    </div>
 
-
-          <input name="name" id="name" type="text" class="validate" placeholder="puppy name">
-
+    <div class="col s12">
+      <div class="row">
+        <div class="container">
           <div class="input-field col s12">
-            <input name="therapy" id="therapy" type="text" class="validate" placeholder="puppy therapy">
+
+
+
+        <form action="/puppies/<%= puppy._id %>?_method=PUT" method="POST">
+
+              <input name="name" id="name" type="text" class="validate" placeholder="puppy name">
+
+              <div class="input-field col s12">
+                <input name="therapy" id="therapy" type="text" class="validate" placeholder="puppy therapy">
+              </div>
+
+              <div class="input-field col s12">
+                <input name="hypoallergenic" id="hypoallergenic"  type="text" class="validate" placeholder="hypoallergenic">
+              </div>
+
+              <div class="input-field col s12">
+                <input name="age" id="age" type="date" class="datepicker" placeholder="puppy age">
+              </div>
+
+              <br>
+              <br>
+
+              <div class="row">
+                <h5 class="pup-photo">Puppy photo url</h5>
+                <input name="url" id="url" type="string" class="photo" style="width: 270px; height: 50px">
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <select name="friendliness" id="friendliness" class="browser-default" type="string">
+                    <option value="" disabled selected>Friendliness Level</option>
+                    <option value="super friendly">Super Friendly</option>
+                    <option value="friendly">Friendly</option>
+                    <option value="not so friendly">Not so Friendly</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-field col s12">
+                <select name="size" id="size" class="browser-default">
+                  <option value="" disabled selected>Puppy Size</option>
+                  <option type="string" value="Huge Puppy">Huge puppy</option>
+                  <option type="string" value="Medium Puppy">Medium puppy</option>
+                  <option type="string" value="Small Puppy">Small puppy</option>
+                </select>
+              </div>
+
+              <br>
+              <br>
+
+              <div class="action row">
+                <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" name="action">Update Puppy</button>
+              </div>
+
+            </form>
           </div>
-
-          <div class="input-field col s12">
-            <input name="hypoallergenic" id="hypoallergenic"  type="text" class="validate" placeholder="hypoallergenic">
-          </div>
-
-          <div class="input-field col s12">
-            <input name="age" id="age" type="date" class="datepicker" placeholder="puppy age">
-          </div>
-
-          <br>
-          <br>
-
-          <div class="row">
-            <h5 class="pup-photo">Puppy photo url</h5>
-            <input name="url" id="url" type="string" class="photo" style="width: 270px; height: 50px">
-          </div>
-
-          <div class="row">
-            <div class="input-field col s12">
-              <select name="friendliness" id="friendliness" class="browser-default" type="string">
-                <option value="" disabled selected>Friendliness Level</option>
-                <option value="super friendly">Super Friendly</option>
-                <option value="friendly">Friendly</option>
-                <option value="not so friendly">Not so Friendly</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="input-field col s12">
-            <select name="size" id="size" class="browser-default">
-              <option value="" disabled selected>Puppy Size</option>
-              <option type="string" value="Huge Puppy">Huge puppy</option>
-              <option type="string" value="Medium Puppy">Medium puppy</option>
-              <option type="string" value="Small Puppy">Small puppy</option>
-            </select>
-          </div>
-
-          <br>
-          <br>
-
-          <div class="action row">
-            <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" name="action">Update Puppy</button>
-          </div>
-
-        </form>
+        </div>
       </div>
     </div>
-  </div>
 
-    </div>
-    <a class="waves-effect waves-light btn">Stuff</a>
-  <%- include ../partials/footer_js.ejs %>
-</body>
+    <%- include ../partials/footer_js.ejs %>
+
+  </body>
 </html>

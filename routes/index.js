@@ -89,8 +89,8 @@ router.get('/logout',                       SessionsController.sessionsDelete);
 router.get('/puppies',          isLoggedIn, PuppiesController.renderPuppiesIndex);
 router.get('/puppies/new',      isLoggedIn, PuppiesController.renderPuppiesNew);
 router.post('/puppies',         isLoggedIn, PuppiesController.renderPuppiesCreate);
-router.get('/puppies/:_id/edit', isLoggedIn, PuppiesController.renderPuppiesEdit);
-router.put('/puppies/:_id',      isLoggedIn, PuppiesController.renderPuppiesUpdate);
+router.get('/puppies/:id/edit', isLoggedIn, PuppiesController.renderPuppiesEdit);
+router.put('/puppies/:id',      isLoggedIn, PuppiesController.renderPuppiesUpdate);
 router.get('/puppies/:id',      isLoggedIn, PuppiesController.renderPuppiesShow);
 
 //||||||||||||||||||||||||||--
