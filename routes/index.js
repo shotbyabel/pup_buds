@@ -92,6 +92,7 @@ router.post('/puppies',         isLoggedIn, PuppiesController.renderPuppiesCreat
 router.get('/puppies/:id/edit', isLoggedIn, PuppiesController.renderPuppiesEdit);
 router.put('/puppies/:id',      isLoggedIn, PuppiesController.renderPuppiesUpdate);
 router.get('/puppies/:id',      isLoggedIn, PuppiesController.renderPuppiesShow);
+router.delete('/puppies', isLoggedIn, PuppiesController.renderPuppiesDelete);
 
 //||||||||||||||||||||||||||--
 // RENDERS USERS CONTOLLER
