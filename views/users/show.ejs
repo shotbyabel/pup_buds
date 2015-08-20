@@ -20,14 +20,14 @@
       <div class="row container">
 
         <div class="col s4">
-          <img src="/images/snow.gif" alt="" class="responsive-img">
+          <img src=<%= user.picture %> alt="" class="responsive-img">
         </div>
 
         <div class="col s1"><br></br></div>
 
         <div class="col s4">
           <h4 class="teal-text">Name</h4>
-          <p><%= user.name %></p>
+          <%= user.name %>
         </div>
 
       </div>
@@ -36,13 +36,14 @@
 
         <div class="col s4">
           <h5 class="teal-text">Age</h5>
-          <p>22</p>
+          <%= user.age %>
         </div>
 
         <div class="col s1"><br></br></div>
 
         <div class="col s4">
           <h5 class="teal-text">Zip</h5>
+          <%= user.zipCode %>
         </div>
 
       </div>
@@ -51,7 +52,7 @@
 
         <div class="col s12">
           <h5 class="teal-text">Bio</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi nam debitis dolore, ipsa at nisi! Voluptates labore maxime, quos placeat nihil assumenda architecto fugiat eos magni molestiae qui quisquam enim.</p>
+          <%= user.bio %>
         </div>
 
       </div>
