@@ -28,15 +28,16 @@ module.exports.renderPuppiesNew = function(req,res){
 
 module.exports.renderPuppiesCreate = function(req,res,next){
   var puppy = new Puppy({
-    name: req.body.name,
-    age: req.body.age,
-    therapy: req.body.therapy,
-    friendliness: req.body.friendliness,
+    name:           req.body.name,
+    age:            req.body.age,
+    therapy:        req.body.therapy,
+    friendliness:   req.body.friendliness,
     hypoallergenic: req.body.hypoallergenic,
-    size: req.body.size
+    url:            req.body.url,
+    size:           req.body.size
   });
-
-  puppy.save(function(error, puppies, user){
+  console.log(req.body);
+  puppy.save(function(error){
     if(error){
       res.send('> ' + err);
       res.render('/users/:id', {
@@ -44,6 +45,7 @@ module.exports.renderPuppiesCreate = function(req,res,next){
         user: req.user
       });
     }
+    res.redirect('/puppies/' + req.user.id)
   });
 };
 
@@ -73,11 +75,6 @@ module.exports.renderPuppiesEdit = function(req,res,next){
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
     if (err) return res.send(err);
-    res.render('puppies/show',
-    {
-      puppy: puppy
-    });
-    var puppy = {puppy:puppy}
-    res.render('puppies/show', {user: req.user});
+    res.render('puppies/show', {user: req.user, puppy: req.puppy});
   });
 };
