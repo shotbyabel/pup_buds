@@ -22,7 +22,7 @@ module.exports.renderPuppiesIndex = function(req, res, next){
 
 module.exports.renderPuppiesNew = function(req,res){
   var puppies = Puppy.all
-  res.render('/puppies', {user: req.user, puppies:puppies});
+  res.render('./puppies/new', {user: req.user, puppies:puppies});
 };
 
 
@@ -72,7 +72,7 @@ module.exports.renderPuppiesEdit = function(req,res,next){
 
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
-    if (err) return res.send(error);
+    if (err) return res.send(err);
     res.render('puppies/show',
     {
       puppy: puppy
