@@ -39,7 +39,7 @@ module.exports.renderPuppiesCreate = function(req,res,next){
   puppy.save(function(error, puppies, user){
     if(error){
       res.send('> ' + err);
-      res.render('/puppies', {
+      res.render('/users/:id', {
         puppies: puppies,
         user: req.user
       });
