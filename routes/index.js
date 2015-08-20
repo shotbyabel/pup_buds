@@ -5,7 +5,7 @@ var router            = express.Router();
 // PASSPORT MIDDLEWARE WILL ADD AUTHETICATED USER TO EVERY REQ.
 //||||||||||||||||||||||||||--
 var passport          = require('passport');
-
+var methodOverride = require('method-override');
 //||||||||||||||||||||||||||--
 // REQUIRE MODEL
 //||||||||||||||||||||||||||--
@@ -92,14 +92,17 @@ router.post('/puppies',         isLoggedIn, PuppiesController.renderPuppiesCreat
 router.get('/puppies/:id/edit', isLoggedIn, PuppiesController.renderPuppiesEdit);
 router.put('/puppies/:id',      isLoggedIn, PuppiesController.renderPuppiesUpdate);
 router.get('/puppies/:id',      isLoggedIn, PuppiesController.renderPuppiesShow);
+router.delete('/puppies', isLoggedIn, PuppiesController.renderPuppiesDelete);
 
 //||||||||||||||||||||||||||--
 // RENDERS USERS CONTOLLER
 //||||||||||||||||||||||||||--
 router.get('/auth/register',                UsersController.usersNew);
+router.get('/users/:id/chat',               UsersController.usersChat);
 router.post('/auth/register',               UsersController.usersCreate);
 router.get('/users/:id',        isLoggedIn, UsersController.userShow);
 router.get('/users/:id/edit',   isLoggedIn, UsersController.userEdit);
+router.put('/users/:id',        isLoggedIn, UsersController.userUpdate);
 module.exports = router;
 
 
