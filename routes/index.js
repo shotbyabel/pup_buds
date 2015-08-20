@@ -78,6 +78,7 @@ router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 router.get('/auth/register', UsersController.usersNew);
 router.post('/auth/register', UsersController.usersCreate);
 router.get('/users/:id', UsersController.userShow);
+router.get('/users/:id/edit', UsersController.userEdit);
 module.exports = router;
 
 
