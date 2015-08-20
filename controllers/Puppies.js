@@ -100,17 +100,13 @@ module.exports.renderPuppiesShow = function(req,res,next){
   });
 };
 
-module.exports.renderPuppiesDelete = function (req,res,next){
-  Puppy.findByIdAndRemove(req.params.id, function (error){
-    if(error) res.send(error);
-    res.redirect('/puppies');
+module.exports.deletePuppy = function(req, res) {
+  var id = req.params.id;
+  var puppy_id = req.params.id;
+
+  Puppy.findByIdAndRemove({_id: id}, function(error){
+    if (error) res.send(error);
+    res.redirect('/puppies')
   });
 };
 
-// module.exports.renderPuppiesShow = function(req,res,next){
-//   Puppy.findById(req.params.id, function(err, puppy) {
-//     console.log('puppy', puppy);
-//     if (err) return res.send(err);
-//     res.render('puppies/show', {user: req.user, puppy: puppy});
-//   });
-// };
