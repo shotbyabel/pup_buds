@@ -96,8 +96,8 @@ router.get('/puppies/:id',      isLoggedIn, PuppiesController.renderPuppiesShow)
 //||||||||||||||||||||||||||--
 // RENDERS USERS CONTOLLER
 //||||||||||||||||||||||||||--
-router.get('/auth/register',    isLoggedIn, UsersController.usersNew);
-router.post('/auth/register',   isLoggedIn, UsersController.usersCreate);
+router.get('/auth/register',                UsersController.usersNew);
+router.post('/auth/register',               UsersController.usersCreate);
 router.get('/users/:id',        isLoggedIn, UsersController.userShow);
 router.get('/users/:id/edit',   isLoggedIn, UsersController.userEdit);
 module.exports = router;
