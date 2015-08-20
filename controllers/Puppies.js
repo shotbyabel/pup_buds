@@ -61,7 +61,9 @@ module.exports.renderPuppiesEdit = function(req,res,next){
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
     if (err) return res.send(error);
-    var puppy = {puppy:puppy}
-    res.render('puppies/show');
+    res.render('puppies/show',
+    {
+      puppy: puppy
+    });
   });
 };
