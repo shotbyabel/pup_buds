@@ -1,4 +1,7 @@
+var express = require('express');
+var mongoose = require('mongoose');
 var Puppy = require('../models/Puppy');
+var router = express.Router();
 
 module.exports.renderPuppiesIndex = function(req, res, next){
   Puppy.find({}, function(err, puppies){
@@ -13,16 +16,39 @@ module.exports.renderPuppiesNew = function(req,res){
   res.render('puppies/new');
 };
 
-module.exports.renderPuppiesCreate = function(req,res,next){
-  Puppy.create(req.body.puppy, function (err, puppy){
-    if(err){
-      res.send('>' + err);
-    }else{
-      res.redirect('/puppies');
-    };
-   });
- };
 
+module.exports.renderPuppiesCreate = function(req,res,next){
+  var puppy = new Puppy({
+    name: req.body.name,
+    age: req.body.age,
+    therapy: req.body.therapy,
+    friendliness: req.body.friendliness,
+    hypoallergenic: req.body.hypoallergenic,
+    size: req.body.size
+  });
+
+  puppy.save(function(error){
+    if(error){
+      res.send('> ' + err);
+      res.render('/puppies');
+    }
+  })
+};
+
+// module.exports.renderPuppiesCreate = function(req,res,next){
+//   var puppy = new Puppy();
+//   puppy.name = req.body.name;
+//   puppy.age = req.body.age;
+//   puppy.therapy = req.body.therapy;
+//   puppy.friendliness = req.body.friendliness;
+//   puppy.hypoallergenic = req.body.hypoallergenic;
+//   puppy.size = req.body.size;
+
+//   puppy.save(function(error, puppy){
+//     if (error) return res.send(error);
+//     res.send(puppy);
+//   });
+// };
 
 module.exports.renderPuppiesEdit = function(req,res,next){
   res.render(
