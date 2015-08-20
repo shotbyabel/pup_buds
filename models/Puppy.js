@@ -3,7 +3,7 @@ var User        = require('./User');
 
 var PuppySchema = new mongoose.Schema({
   name: String,
-  age: Date,
+  age: String,
   therapy: Boolean,
   friendliness: String,
   hypoallerginc: Boolean,
