@@ -2,18 +2,56 @@
 <html>
   <head>
     <title><%= title %></title>
-    <!-- CSS -->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
-      <link href="css/register.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <link href="../../stylesheets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../../stylesheets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../../stylesheets/css/materialize.min.css"  media="screen,projection"/>
 </head>
-   <div class="container">
+   <div class="container center-align">
     <form action="/edit" method="POST" enctype="multipart/form-data">
-    <h1>Form partials throw errors</h1>
-      <%#= include ../partials/form %>
+      <h1 class="#4db6ac teal-text lighten-2">User Profile</h1>
+
+        <div class="row">
+
+          <div class="input-field col s12">
+            <input placeholder="<%= user.name %>" name="name" id="name" type="text" class="validate">
+          </div>
+
+          <div class="input-field col s6">
+            <input placeholder="<%= user.zipCode %>" name="zipCode" id="zipCode" type="text" class="validate">
+          </div>
+
+          <div class="input-field col s6">
+            <input placeholder="<%= user.age %>" name="age" id="age" type="text" class="validate">
+          </div>
+
+          <br>
+
+          <h5>Describe yourself</h5>
+
+          <i class="material-icons prefix left">mode_edit</i>
+
+          <div class="input-field col s12 left">
+            <textarea name="bio" id="textarea1" class="materialize-textarea" placeholder="<%= user.bio %>"></textarea>
+          </div>
+
+          <div class="input-field col s12">
+            <h5>Profile Photo</h5>
+            <input placeholder="<%= user.url %>" name="url" id="url" type="text" class="validate">
+          </div>
+
+          <button class="btn waves-effect waves-light red accent-2 z-depth-2" type="submit" name="action">Submit</button>
+
+        </div>
+
     </form>
    </div>
+
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../../js/materialize.min.js"></script>
+  <script src="../../js/main.js"></script>
   </body>
 </html>
