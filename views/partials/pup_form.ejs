@@ -6,9 +6,11 @@
         <input name="puppy[name]" id="puppy_name" type="text" class="validate" placeholder="puppy name">
       </div>
       <div class="input-field col s12">
-          <input name="puppy[therapy]" type="text" id="therapy" class="validate" placeholder="puppy therapy">
-          
-        </div>
+        <input name="puppy[therapy]" type="text" id="therapy" class="validate" placeholder="puppy therapy">
+      </div>
+      <div class="input-field col s12">
+        <input name="puppy[hypoallergenic" type="text" id="allergenic" class="validate" placeholder="hypoallergenic">
+      </div>
       <div class="input-field col s12">
         <input name="puppy[age]" id="puppy_age" type="date" class="datepicker" placeholder="puppy age">
       </div>
@@ -32,15 +34,14 @@
         <div class="input-field col s12">
           <select name="puppy[size]" class="browser-default">
             <option value="" disabled selected>Puppy Size</option>
-            <option value="Huge Puppy">Huge puppy</option>
-            <option value="Medium Puppy">Medium puppy</option>
-            <option value="Small Puppy">Small puppy</option>
+            <option type="string" value="Huge Puppy">Huge puppy</option>
+            <option type="string" value="Medium Puppy">Medium puppy</option>
+            <option type="string" value="Small Puppy">Small puppy</option>
           </select>
           <br>
           <br>
           </div>
-       
-          <div class="col s6 center-align">
+            <!-- div class="col s6 center-align">
             <h4>Hypoallergenic?</h4>
             <p>
               <input name="puppy[hypoallergenic]" type="checkbox"  id="yes"/>
@@ -51,7 +52,7 @@
               <label id="no" for="no">
               no</label>
             </p>
-            <br>
+            <br> -->
           </div>
           <div class="action row">
             <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" id="puppy-save"value= "Save Puppy" name="action">Add Puppy</button>
