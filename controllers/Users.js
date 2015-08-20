@@ -9,7 +9,8 @@ var passport = require('passport');
 //||||||||||||||||||||||||||--
 // REQUIRE MODEL
 //||||||||||||||||||||||||||--
-var User = require('../models/User');
+var User    = require('../models/User');
+var Message = require('../models/Message');
 
 //||||||||||||||||||||||||||--
 // NEW USER
@@ -21,6 +22,16 @@ function usersNew  (req, res) {
 //||||||||||||||||||||||||||--
 // ADD USER TO DATABASE
 //||||||||||||||||||||||||||--
+var usersChat = function(req, res, next) {
+  User.findOne({_id: req.params.id}, function(err, userTwo) {
+    Message.find({$or: [{$and: [{sender: req.user.username}, {receiver: userTwo.username}]},
+                        {$and: [{sender: userTwo.username}, {receiver: req.user.username}]}]},
+                        function(err, messages) {
+                          res.render('users/chat', {title: 'Pup Buds', user: userTwo, userOne: req.user, messages: messages});
+                        })
+  });
+};
+
 function usersCreate (req, res) {
   User.register(new User({
     username: req.body.username,
@@ -70,9 +81,9 @@ var userEdit = function(req, res, next){
 
 
 
-
 module.exports = {
 
+    usersChat:     usersChat,
     usersNew:      usersNew,
     usersCreate:   usersCreate,
     userShow:      userShow,
