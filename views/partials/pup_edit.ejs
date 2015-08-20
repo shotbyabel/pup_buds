@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="container">
+        <div class="input-field col s12">
+          <form action="/puppies/:id" method="PUT" enctype="multipart/form-data">
+
+
+          <input name="puppy[name]" id="puppy_name" type="text" class="validate" placeholder="puppy name">
+        </div>
+        <div class="input-field col s12">
+          <input name="puppy[age]" id="puppy_age" type="date" class="datepicker validate" placeholder="puppy age">
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <h5 class="pup-photo">Puppy profile photo</h5>
+        <input name="puppy[photo]" type="string" name="puppy[url]">
+
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <select name="puppy[friendliness]"class="browser-default" type="string">
+              <option value="" disabled selected>Friendliness Level</option>
+              <option value="1">Super Friendly</option>
+              <option value="2">Friendly</option>
+              <option value="3">Not so Friendly</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <select name="puppy[size]" class="browser-default">
+            <option value="" disabled selected>Puppy Size</option>
+            <option value="1">Huge puppy</option>
+            <option value="2">Medium puppy</option>
+            <option value="3">Small puppy</option>
+          </select>
+          <br>
+          <br>
+          </div>
+          <div class="col s6">
+            <h4>Hypoallergenic?</h4>
+            <br>
+            <p>
+            <input name="puppy[hypoallergenic]" type="checkbox" id="yes"/>
+            <label id="yes" for="yes">yes</label>
+            </p>
+            <p>
+            <br>
+            <br>
+          </div>
+
+          <div class="col s6">
+            <h4>Therapy?</h4>
+            <br>
+            <p>
+            <input name="puppy[therpay]" type="checkbox" id="yes"/>
+            <label id="yes" for="yes">yes</label>
+            </p>
+            <br>
+            <br>
+               <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2" type="submit" value= "Save Puppy" name="action">Add Puppy</button>
+            </div>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>

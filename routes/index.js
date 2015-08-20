@@ -59,7 +59,8 @@ router.post('/login', SessionsController.sessionCreate);
 router.get('/puppies', PuppiesController.renderPuppiesIndex);
 router.get('/puppies/new', PuppiesController.renderPuppiesNew);
 router.post('/puppies', PuppiesController.renderPuppiesCreate);
-router.get('/puppies/:id', PuppiesController.renderPuppiesEdit);
+router.get('/puppies/:id/edit', PuppiesController.renderPuppiesEdit);
+router.put('/puppies/:id', PuppiesController.renderPuppiesUpdate);
 router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 
 
