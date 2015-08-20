@@ -2,10 +2,8 @@
 <body>
   <% include ../partials/navbar %>
     <div class="container center-align row cols s12">
-      <h1>Add Puppy</h1>
-      <form action="/puppies" method="POST" enctype="multipart/form-data">
-        <%- include ../partials/pup_form %>
-       </form>
+      <h1>Create Puppy</h1>
+      <% include ../partials/pup_form %>
     </div>
   <%- include ../partials/feeter %>
   <%- include ../partials/new_pup_footer %>

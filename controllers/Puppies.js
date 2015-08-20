@@ -25,19 +25,21 @@ module.exports.renderPuppiesNew = function(req,res){
 
 module.exports.renderPuppiesCreate = function(req,res,next){
   var puppy = new Puppy({
-    name: req.body.name,
-    age: req.body.age,
-    therapy: req.body.therapy,
-    friendliness: req.body.friendliness,
+    name:           req.body.name,
+    age:            req.body.age,
+    therapy:        req.body.therapy,
+    friendliness:   req.body.friendliness,
     hypoallergenic: req.body.hypoallergenic,
-    size: req.body.size
+    url:            req.body.url,
+    size:           req.body.size
   });
-
+  console.log(req.body);
   puppy.save(function(error){
     if(error){
       res.send('> ' + err);
       res.redirect('/puppies');
     }
+    res.redirect('/puppies/' + req.user.id)
   });
 };
 

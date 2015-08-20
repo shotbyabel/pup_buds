@@ -1,4 +1,5 @@
 var mongoose    = require('mongoose');
+var Schema      = mongoose.Schema
 
 //||||||||||||||||||||||||||--
 // REQUIRE USER MODEL
@@ -15,7 +16,10 @@ var PuppySchema = new mongoose.Schema({
   friendliness:   String,
   hypoallerginc:  Boolean,
   url:            String,
-  size:           String
+  size:           String,
+  user: {
+      type: mongoose.Schema.Types.ObjectId, ref: 'User'
+  }
 });
 
 //||||||||||||||||||||||||||--
