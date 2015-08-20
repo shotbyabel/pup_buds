@@ -6,10 +6,10 @@ $('.datepicker').pickadate({
   });
 });
 
-// creates an alert message when user adds a new puppy
-// document.getElementById('puppy-save').onclick = function(){
-//   swal("Good job!", "You added a new puppy!", "success");
-// };
+/*creates an alert message when user adds a new puppy*/
+document.getElementById('puppy-edit').onclick = function(){
+  swal("Good job!", "You added a new puppy!", "success");
+};
 
 // facebook login
 window.fbAsyncInit = function() {
