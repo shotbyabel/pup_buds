@@ -13,7 +13,6 @@ function sessionsNew  (req, res) {
 function sessionsCreate (req, res, next) {
     req.session.save(function (err) {
       if (err) return next(err);
-      console.log(req.id)
       res.redirect('/users/:id');
     });
   };

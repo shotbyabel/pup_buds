@@ -63,11 +63,13 @@ router.get('/logout', SessionsController.sessionsDelete);
 
 
 //renders puppies controller
-router.get('/puppies', isLoggedIn, PuppiesController.renderPuppiesIndex);
-router.get('/puppies/new', isLoggedIn, PuppiesController.renderPuppiesNew);
-router.post('/puppies', isLoggedIn, PuppiesController.renderPuppiesCreate);
-router.get('/puppies/:id', isLoggedIn, PuppiesController.renderPuppiesEdit);
-router.get('/puppies/:id', isLoggedIn, PuppiesController.renderPuppiesShow);
+
+router.get('/puppies', PuppiesController.renderPuppiesIndex);
+router.get('/puppies/new', PuppiesController.renderPuppiesNew);
+router.post('/puppies', PuppiesController.renderPuppiesCreate);
+router.get('/puppies/:id/edit', PuppiesController.renderPuppiesEdit);
+router.put('/puppies/:id', PuppiesController.renderPuppiesUpdate);
+router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
 
 
 //renders users contoller
