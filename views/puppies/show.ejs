@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <%- include ../partials/head.ejs %>
+<head>
+   <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/stylesheets/css/puppy_show.css">
+  <link type="text/css" rel="stylesheet" href="/styleheets/css/materialize.min.css"  media="screen,projection"/>
+</head>
   <body>
-    <%- include ../partials/nav.ejs %>
+    <%- include ../partials/navbar.ejs %> 
     <div class="container center-align">
        <h1 class="#4db6ac teal-text lighter-2">Puppy Profile</h1>
-      <div class="row">
-        <div class="col 6">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="http://www.studentsoftheworld.info/sites/animals/img/28051_puppy4.jpg"/>
-              <span class="card-title"></span>
-            </div>
-            <div class="card-content">
-
-              <%= puppy.name %>
-              <%= puppy.age %>
-              <%= puppy.therapy %>
-              <%= puppy.friendliness %>
-              <%= puppy.size %>
-              <img src="<%= puppy.url%>" alt="">
-            </div>
-            <div class="contact-puppy">
-           <!--    <a href="puppies/:id/edit">Edit --> your Profile</a>
-            </div>
+       <div class="card z-depth-2">
+          <div class="card-image waves-effect waves-block waves-light">
+             
           </div>
+          <img class="activator" style="width:400px; height:400px" src="<%= puppy.url%>" alt="">
+          <div class="card-content">
+            <h3 class="card-title activator grey-text text-darken-4"><%= puppy.name %></h3><i class="material-icons right">more_vert</i>
+            <br>
+           <p><a class="teal darken-4 btn" href="/puppies/puppy/edit">Edit Your Puppy</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title activator grey-text text-darken-4"> <%= puppy.name %><i class="material-icons right">close</i></span>
+          <div class="birthday">
+            <h6>Birthday: <%= puppy.age %></h6>
+          </div>
+            <h6>Therapy: <%= puppy.therapy %></h6>
+            <h6>Friendliness:  <%= puppy.friendliness %>
+            </h6>
+
+            <h6>Size: <%= puppy.size %></h6>
+            <h6> Meet my owner: <% user.url %></h6>
+
+            <br>
+            <a class="btn red darken-3" href="/puppies">Delete Puppy</a>
+            
+            
         </div>
       </div>
-    <%- include ../partials/footer_js.ejs %>
+  </div>
+  <%- include ../partials/feeter %> 
+   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script src="../js/pickdate.js"></script>
+    <script src="../dist/sweetalert.min.js"></script>
   </body>
 </html>
