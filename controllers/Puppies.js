@@ -14,12 +14,12 @@ module.exports.renderPuppiesIndex = function(req, res, next){
     if (err) res.send('> ' + err);
     res.render('puppies/index', {
       puppies: puppies
-    });
+    }, {user: req.user});
   });
 };
 
 module.exports.renderPuppiesNew = function(req,res){
-  res.render('puppies/new');
+  res.render('puppies/new', {user: req.user});
 };
 
 
@@ -45,7 +45,7 @@ module.exports.renderPuppiesCreate = function(req,res,next){
 module.exports.renderPuppiesEdit = function(req,res,next){
   Puppy.findOne(req.params.id, function(error, puppy){
     if(error) return res.send(error);
-    res.render('puppies/edit');
+    res.render('puppies/edit', {user: req.user});
   });
 };
 
@@ -67,9 +67,14 @@ module.exports.renderPuppiesEdit = function(req,res,next){
 module.exports.renderPuppiesShow = function(req,res,next){
   Puppy.findById(req.params.id, function(err, puppy) {
     if (err) return res.send(error);
+<<<<<<< HEAD
     res.render('puppies/show',
     {
       puppy: puppy
     });
+=======
+    var puppy = {puppy:puppy}
+    res.render('puppies/show', {user: req.user});
+>>>>>>> master
   });
 };
