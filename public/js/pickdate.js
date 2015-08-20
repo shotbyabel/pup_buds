@@ -6,6 +6,10 @@ $('.datepicker').pickadate({
   });
 }); 
 
+document.getElementById('puppy-save').onclick = function(){
+  swal("Good job!", "You clicked the button!", "success");
+};
+
 $('.dropdown-button').dropdown({
       inDuration: 300,
       outDuration: 225,
@@ -15,4 +19,10 @@ $('.dropdown-button').dropdown({
       belowOrigin: false // Displays dropdown below the button
     }
   );
+
+// Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
         
+

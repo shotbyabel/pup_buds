@@ -8,22 +8,25 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+
   <link href="../stylesheets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../stylesheets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="../stylesheets/css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
-  <% include ../partials/navbar %>
-  <div class="container center-align row cols s12">
-    <h1>Add Puppy</h1>
-    <form action="/puppies" method="POST" enctype="multipart/form-data">
-      <% include ../partials/pup_form %>
-    </form>
-  </div>
+  <% include ../partials/navbar %>  
+    <div class="container center-align row cols s12">
+      <h1>Add Puppy</h1>
+      <form action="/puppies" method="POST" enctype="multipart/form-data">
+        <%- include ../partials/pup_form %>
+       </form>
+    </div>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="../js/materialize.js"></script>
   <script type="text/javascript" src="../js/materialize.min.js"></script>
   <script src="../js/pickdate.js"></script>
+  <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
   <%- include ../partials/feeter %>
  </body>
 </html>
