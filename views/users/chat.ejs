@@ -8,11 +8,28 @@
 </head>
 <body>
 
-  <script>
-    var thisUsername = "<%= user.username %>";
-    //var otherUsername = "<//%=  %>";
-  </script>
+  <div class="chatarea">
+    <ol class="discussion">
+      <div class="chat_container">
+        <ul id="messages">
+        </ul>
+      </div>
+    </ol>
+  </div>
+  <div class="inputbox">
+    <form class="chat_input" action="">
+      <input id="m" autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var me = "<%= user.username %>";
+    var otherUser = "bert@email.com";
+  </script>
   <script src="/javascripts/chat.js"></script>
 </body>
 </html>

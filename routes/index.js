@@ -98,6 +98,7 @@ router.delete('/puppies', isLoggedIn, PuppiesController.renderPuppiesDelete);
 // RENDERS USERS CONTOLLER
 //||||||||||||||||||||||||||--
 router.get('/auth/register',                UsersController.usersNew);
+router.get('/users/:id/chat',               UsersController.usersChat);
 router.post('/auth/register',               UsersController.usersCreate);
 router.get('/users/:id',        isLoggedIn, UsersController.userShow);
 router.get('/users/:id/edit',   isLoggedIn, UsersController.userEdit);
