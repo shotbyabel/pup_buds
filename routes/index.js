@@ -3,7 +3,7 @@ var router            = express.Router();
 var passport          = require('passport');
 var User              = require('../models/User');
 var PuppiesController = require('../controllers/Puppies');
-var SessionsController= require('../controllers/Sessions');
+var SessionsController= require('../controllers/sessions');
 var UsersController   = require('../controllers/Users');
 
 /* GET home page. */
@@ -45,22 +45,29 @@ router.get('/auth/twitter/callback', passport.authenticate('twitter', {
   failureRedirect: '/login'
 }));
 
+var isLoggedIn = function(req, res, next) {
+  if (!req.isAuthenticated()) {
+    res.redirect('/login');
+  }
+  return next();
+};
 
 
 
 //renders sesssions controller
-router.get('/login', SessionsController.sessionNew);
-router.get('/logout', SessionsController.sessionDelete);
-router.get('/secret', SessionsController.sessionShow);
-router.post('/login', SessionsController.sessionCreate);
+router.get('/login', SessionsController.sessionsNew);
+router.post('/login', SessionsController.sessionsCreate);
+router.get('/logout', SessionsController.sessionsDelete);
+//router.get('/secret', SessionsController.sessionsShow);
+
 
 
 //renders puppies controller
-router.get('/puppies', PuppiesController.renderPuppiesIndex);
-router.get('/puppies/new', PuppiesController.renderPuppiesNew);
-router.post('/puppies', PuppiesController.renderPuppiesCreate);
-router.get('/puppies/:id', PuppiesController.renderPuppiesEdit);
-router.get('/puppies/:id', PuppiesController.renderPuppiesShow);
+router.get('/puppies', isLoggedIn, PuppiesController.renderPuppiesIndex);
+router.get('/puppies/new', isLoggedIn, PuppiesController.renderPuppiesNew);
+router.post('/puppies', isLoggedIn, PuppiesController.renderPuppiesCreate);
+router.get('/puppies/:id', isLoggedIn, PuppiesController.renderPuppiesEdit);
+router.get('/puppies/:id', isLoggedIn, PuppiesController.renderPuppiesShow);
 
 
 //renders users contoller
