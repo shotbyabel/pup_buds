@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 
 // require modules for mongoose and passport
@@ -35,6 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
