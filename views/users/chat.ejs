@@ -8,11 +8,13 @@
 </head>
 <body>
 
-  <script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script
     var thisUsername = "<%= user.username %>";
-    //var otherUsername = "<//%=  %>";
-  </script>
-  <script src="/socket.io/socket.io.js"></script>
+    var otherUsername = "<%= user.username %>";
+
+ 
   <script src="/javascripts/chat.js"></script>
+  
 </body>
 </html>
