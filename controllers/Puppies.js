@@ -1,6 +1,12 @@
 var express = require('express');
 var mongoose = require('mongoose');
+
+//||||||||||||||||||||||||||--
+// REQUIRE MODELS
+//||||||||||||||||||||||||||--
 var Puppy = require('../models/Puppy');
+var User = require('../models/User');
+
 var router = express.Router();
 
 module.exports.renderPuppiesIndex = function(req, res, next){
