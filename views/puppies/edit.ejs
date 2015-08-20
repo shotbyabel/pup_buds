@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <%- include ../partials/head.ejs %>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Pupbuds</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <link href="../../stylesheets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../../stylesheets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../../stylesheets/css/materialize.min.css"  media="screen,projection"/>
+  </head>
   <body>
 
-    <%- include ../partials/nav.ejs %>
+    <%- include ../partials/navbar.ejs %>
 
     <div class="container center-align">
-      <h1 class="teal lighten-1 white-text z-depth-3">
-        User Profile
+      <h1 class="lighten-1 teal-text">
+        Puppy Profile
       </h1>
     </div>
 
@@ -17,28 +28,35 @@
           <div class="input-field col s12">
 
 
-        <form action="/puppies/<%= puppy._id %>?_method=PUT" method="POST">
-
-              <input name="name" id="name" type="text" class="validate" placeholder="puppy name">
+            <form action="/puppies/<%= puppy._id %>?_method=PUT" method="POST">
 
               <div class="input-field col s12">
-                <input name="therapy" id="therapy" type="text" class="validate" placeholder="puppy therapy">
+                <input name="name" id="name" type="text" class="validate" placeholder="<%= puppy.name %>">
+                <label for="name">puppy name</label>
               </div>
 
-              <div class="input-field col s12">
-                <input name="hypoallergenic" id="hypoallergenic"  type="text" class="validate" placeholder="hypoallergenic">
+              <div class="input-field col s12 center-align">
+                <h5 class="teal-text">Therapy Pup?</h5>
+                <input name="therapy" id="therapy" type="checkbox" class="validate">
+                <label for="therapy">Yes</label>
+              </div>
+
+              <div class="input-field col s12 center-align">
+                <h5 class="teal-text">Hypoallergenic?</h5>
+                <input name="hypoallergenic" id="hypoallergenic" type="checkbox" class="validate">
+                <label for="hypoallergenic">Yes</label>
               </div>
 
               <div class="input-field col s12">
                 <input name="age" id="age" type="date" class="datepicker" placeholder="puppy age">
               </div>
 
-              <br>
-              <br>
+              <br></br>
+              <br></br>
 
-              <div class="row">
-                <h5 class="pup-photo">Puppy photo url</h5>
-                <input name="url" id="url" type="string" class="photo" style="width: 270px; height: 50px">
+              <div class="row center-align">
+                <h5 class="pup-photo teal-text">Puppy Photo url</h5>
+                <input name="url" id="url" type="string" class="photo" placeholder="<%= puppy.url %>" style="width: 270px; height: 50px">
               </div>
 
               <div class="row">
@@ -52,20 +70,22 @@
                 </div>
               </div>
 
-              <div class="input-field col s12">
-                <select name="size" id="size" class="browser-default">
-                  <option value="" disabled selected>Puppy Size</option>
-                  <option type="string" value="Huge Puppy">Huge puppy</option>
-                  <option type="string" value="Medium Puppy">Medium puppy</option>
-                  <option type="string" value="Small Puppy">Small puppy</option>
-                </select>
+              <div class="row">
+                <div class="input-field col s12">
+                  <select name="size" id="size" class="browser-default">
+                    <option value="" disabled selected>Puppy Size</option>
+                    <option type="string" value="Huge Puppy">Huge puppy</option>
+                    <option type="string" value="Medium Puppy">Medium puppy</option>
+                    <option type="string" value="Small Puppy">Small puppy</option>
+                  </select>
+                </div>
               </div>
 
               <br>
               <br>
 
-              <div class="action row">
-                <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2 puppy-btn" type="submit" name="action">Update Puppy</button>
+              <div class="action row center-align">
+                <button class="btn waves-effect waves-light btn-large red puppy-btn" type="submit" name="action">Update Puppy</button>
               </div>
 
             </form>
@@ -74,7 +94,10 @@
       </div>
     </div>
 
-    <%- include ../partials/footer_js.ejs %>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../js/materialize.min.js"></script>
+    <script src="../../js/main.js"></script>
 
   </body>
 </html>
