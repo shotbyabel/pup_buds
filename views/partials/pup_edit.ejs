@@ -9,13 +9,13 @@
           <input name="puppy[name]" id="puppy_name" type="text" class="validate" placeholder="puppy name">
         </div>
         <div class="input-field col s12">
-          <input name="puppy[age]" id="puppy_age" type="date" class="datepicker validate" placeholder="puppy age">
+          <input name="puppy[age]" id="puppy_age" type="date" class="datepicker" placeholder="puppy age">
         </div>
         <br>
         <br>
         <div class="row">
           <h5 class="pup-photo">Puppy profile photo</h5>
-        <input name="puppy[photo]" type="string" name="puppy[url]">
+        <input name="puppy[url]" type="string" id="url" name="puppy[url]">
 
         </div>
         <div class="row">
@@ -42,8 +42,8 @@
             <h4>Hypoallergenic?</h4>
             <br>
             <p>
-            <input name="puppy[hypoallergenic]" type="checkbox" id="yes"/>
-            <label id="yes" for="yes">yes</label>
+            <input name="puppy[hypoallergenic]" type="checkbox" id="pup-pic" id="yes"/>
+            <label id="yes" for="true">yes</label>
             </p>
             <p>
             <br>
@@ -54,15 +54,20 @@
             <h4>Therapy?</h4>
             <br>
             <p>
-            <input name="puppy[therpay]" type="checkbox" id="yes"/>
-            <label id="yes" for="yes">yes</label>
+            <input name="puppy[therapy]" type="checkbox" value="true" id="yes"/>
+            <label id="yes" for="true">yes</label>
             </p>
             <br>
             <br>
+          </div>
+          <div> 
                <button class="btn waves-effect waves-light btn-sent red accent-2 z-depth-2" type="submit" value= "Save Puppy" name="action">Add Puppy</button>
+              <span>
+                <button><a href="/destroy/<%= puppy._id %>" title="Delete puppy", class="btn-waves-effect waves-light btn-sent red accent-2">Delete puppy</a>
+                </button>
+              </div>
             </div>
-
-        </div>
+          </div>
         </form>
       </div>
     </div>

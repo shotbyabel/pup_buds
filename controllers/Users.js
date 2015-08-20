@@ -1,21 +1,34 @@
 var express = require('express');
-var passport = require('passport');
-var User = require('../models/User');
 var router = express.Router();
 
+//||||||||||||||||||||||||||--
+// REQUIRE PASSPORT
+//||||||||||||||||||||||||||--
+var passport = require('passport');
 
+//||||||||||||||||||||||||||--
+// REQUIRE MODEL
+//||||||||||||||||||||||||||--
+var User = require('../models/User');
 
-
-
-//new User
+//||||||||||||||||||||||||||--
+// NEW USER
+//||||||||||||||||||||||||||--
 function usersNew  (req, res) {
   res.render('auth/register');
 };
 
+//||||||||||||||||||||||||||--
+// ADD USER TO DATABASE
+//||||||||||||||||||||||||||--
 function usersCreate (req, res) {
   User.register(new User({
     username: req.body.username,
-    name: req.body.name
+    name: req.body.name,
+    zipCode: req.body.zipCode,
+    age: req.body.age,
+    bio: req.body.bio,
+    url: req.body.url
   }), req.body.password, function(err, user) {
     // if (err) { console.log(err); return res.render('auth/register', {user: user}); }
     if (err) return res.render('auth/register', {user: user});
@@ -43,7 +56,17 @@ var userShow = function(req, res, next){
 };
 
 
+var userEdit = function(req, res, next){
+  var id = req.params.id;
 
+  User.findById({_id:id}, function(error, user){
+    if(error) res.json({message: 'Could not find user because ' + error});
+    res.render(
+      './users/edit', {
+        user: req.user
+      });
+  });
+};
 
 
 
@@ -52,7 +75,8 @@ module.exports = {
 
     usersNew:      usersNew,
     usersCreate:   usersCreate,
-    userShow:     userShow
+    userShow:      userShow,
+    userEdit:      userEdit
 
 };
 

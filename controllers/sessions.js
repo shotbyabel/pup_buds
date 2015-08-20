@@ -3,48 +3,38 @@ var passport = require('passport');
 var User = require('../models/User');
 var router = express.Router();
 
-//GET '/login'
-function sessionNew  (req, res) {
+//||||||||||||||||||||||||||--
+// GET '/LOGIN'
+//||||||||||||||||||||||||||--
+function sessionsNew  (req, res) {
   res.render('auth/login', {user : req.user});
 };
-
-//Post actually logs in
-//double check this withOUt sessions Create..
-  function sessionCreate (req, res, next) {
+//||||||||||||||||||||||||||--
+// POST ACTUALLY LOGS IN DOUBLE CHECK THIS WITHOUT SESSIONS CREATE..
+//||||||||||||||||||||||||||--
+function sessionsCreate (req, res, next) {
     req.session.save(function (err) {
       if (err) return next(err);
-      res.redirect('/users/:id');
+      res.redirect('/users/' + req.user.id);
     });
   };
 
-
-//GET '/logout'
-function sessionDelete  (req, res) {
-  req.logout();
-  res.redirect('/');
+//||||||||||||||||||||||||||--
+// GET '/LOGOUT'
+//||||||||||||||||||||||||||--
+function sessionsDelete  (req, res) {
+  // req.logout();
+  // res.redirect('/');
+  req.session.destroy(function(err){
+    res.redirect('/');
+  })
 };
 
-//GET /'secret'
-function sessionShow (req, res) {isLoggedIn,
-  res.render('secret', {user: req.user});
-};
-
-// middleware to make sure a user is logged in
-function isLoggedIn (req, res, next) {
-  // if user is authenticated in the session, carry on
-  if (req.isAuthenticated())
-    return next();
-  // if they aren't redirect them to the login page
-  res.redirect('/login');
-}
-
-// router.get('/login', function
-//session create
-// router.get('/logout', function
-
+//||||||||||||||||||||||||||--
+// EXPORT FUNCTIONS
+//||||||||||||||||||||||||||--
 module.exports = {
-  sessionNew: sessionNew,
-  sessionCreate: sessionCreate,
-  sessionShow:   sessionShow,
-  sessionDelete:  sessionDelete
+  sessionsNew:     sessionsNew,
+  sessionsCreate:  sessionsCreate,
+  sessionsDelete:  sessionsDelete
 };
