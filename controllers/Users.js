@@ -47,7 +47,17 @@ var userShow = function(req, res, next){
 };
 
 
+var userEdit = function(req, res, next){
+  var id = req.params.id;
 
+  User.findById({_id:id}, function(error, user){
+    if(error) res.json({message: 'Could not find user because ' + error});
+    res.render(
+      './users/edit', {
+        user: req.user
+      });
+  });
+};
 
 
 
@@ -56,7 +66,8 @@ module.exports = {
 
     usersNew:      usersNew,
     usersCreate:   usersCreate,
-    userShow:     userShow
+    userShow:      userShow,
+    userEdit:      userEdit
 
 };
 
