@@ -69,20 +69,6 @@ passport.deserializeUser(User.deserializeUser());
 app.listen();
 console.log('3000 is the magic port!');
 
-//socket iO
-var app_port = 3000; //the port in which the application will run
-var io_port = 3333; //the port in which socket io will run
-
-var express = require('express'); //include the express js framework
-var app = require('express')(); //create an app using express js
-var server = require('http').createServer(app); //create an express js server
-
-var io = require('socket.io').listen(server); //start socket io
-
-var redis = require("redis"); //include the redis client
-var redis_client = redis.createClient(); //create a redis client
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

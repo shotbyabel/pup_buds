@@ -9,39 +9,52 @@
 *"Find your best friend's best friend"*
 
 __________________
-**TEAM MEMBERS**
+**GROUP 1**
 
-- Ezra *(Manager and resident JavaScript expert)*
-- Sam *Front End*
-- Rachelle *Front End*
-- Meghan *Back End*
-- Abel *Back End*
+- Meghan
+- Rachelle 
+- Ezra 
+- Sam 
+- Abel 
 
 **LINK to our TRELLO board**
-Here is our SCRUM! [Trello Board](https://trello.com/b/Sebd1Udp/pupbuds).
+[Trello Board](https://trello.com/b/Sebd1Udp/pupbuds).
 
 #### vist the app
 [Pup Buds]('paste url here').
 
 #### MVP (User stories)
 
-- [ ]   As a user I want to request a puppy to hang out with.
+- [x]   I want a warm and cute welcome page that reflects puppy happiness
 
-- [ ]   I would like to view individual puppies on their profile page.
+- [x]   As a suser I want to be create a profile for me and my puppy
+
+- [x]   As a user I want to be able to log in with my Facebook or Twitter
+
+- [x]   As a user I want to add my own puppy for playdates
+
+- [x]   As a user I need to set dates aside for my puppy's availability
+
+- [x]   As a user I want to find puppies by size and friendliness levels
+
+- [x]   I would like to view individual puppies on their profile page.
+
+- [x]   As a user I would like to view a page with all of owners and puppies(index)
+
+
+###ICEBOX
+
+- [ ]   As a user I want to request a puppy to hang out with.
 
 - [ ]   As a user I would like to chat or message puppy owners.
 
 - [ ]   After meeting a puppy I would like to rate them and the owners.
 
-- [ ]   As a user I would like to view a page with all of owners and puppies(index)
-
 - [ ]   As a user I would like to see what puppies are near me (Google Maps API)
 
-###ICEBOX
+- [ ]   Display puppies that are availalbe NOW!
 
--  Display puppies that are availalbe NOW!
-
--  As a user I want to register my puppy.
+- [ ]   As a user I want to register my puppy.
 
 
 ### Technologies used
@@ -50,6 +63,14 @@ Here is our SCRUM! [Trello Board](https://trello.com/b/Sebd1Udp/pupbuds).
 - MongoDB (database)
 
 - Express JS
+
+- socket IO
+
+- Google Maps API
+
+- Materialize Framework
+
+- Heroku
 
 ### Installation Instructions & Depedencies
 
@@ -60,41 +81,18 @@ _____________
 ##Models
 
 
-| USERS           | OWNERS            | PUPPIES                   |
+| USERS           | MESSAGE           | PUPPIES                   |
 | --------------  |  -------------    | ------------------------  |
-| name: String    | name: String      | name: String              |
-| age: Number     | age: Number       | age: Number               |
-| email: String   | profile_pic: url  | therapy: Boolean          |
-| kids: Boolean   | email: String     | friendliness: String      |
-| zip : String    | puppy:[embeded/id]| hypoallergenic: boolean   |
-| profile_pic: url| zip : String      | *[embeded/id]             |     
-      
-##Views
+| name: String    | message: String   | name: String              |
+| age: Number     | read: Boolean     | age: Date                 |
+| zipCode: String |                   | therapy: Boolean          |
+| bio: String     |                   | friendliness: String      |
+| url : String    |                   | hypoallergenic: boolean   |
+| puppies:        |                   | url: String               |
+| *[embeded/id]   |                   | size: String              |
+|                 |                   | user:                     |    
+|                 |                   | *[embeded/id]             |     
 
-**STATIC**
-
-- HOME
-- *login*
-- *req*
-- *db*
-
-**USER**
-
-- INDEX
-- SHOW
-- NEW(registration)
-
-**OWNERS**
-
-- INDEX
-- SHOW
-- NEW (registration form)
-
-**PUPPIES**
-
-- INDEX
-- SHOW
-- NEW(form w/puppy params)
 
 ### Branching/Pull Request info
 <a id="branching"></a>
