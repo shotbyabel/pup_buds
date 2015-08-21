@@ -17,9 +17,7 @@
     <%- include ../partials/navbar %>
 
 <!-- Start of banner -->
-  <div class="parallax">
-    <img src="/images/tree_sniff.gif" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 189px, 0px);">
-  </div>
+
   
 
   <div class="container center-align"> 
@@ -31,29 +29,20 @@
           <% puppies.forEach(function(puppy) { %>
           <div class="card">
             <div class="card-image">
-              <img src="images/sample-1.jpg">
+               <img class="activator" style="width:400px; height:400px" src="<%= puppy.url%>" alt="">
               <span class="card-title"><%= puppy.name %></span>
             </div>
             <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              
+          </div>
+                <h5><a href="puppies/<%= puppy.id %>"><%= puppy.name %></a></h5>
+           
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
+            
           </div>
         <% }); %>
         </div>
       </div>
-            
-     
-   
-     
-
-   
-
-
     <%- include ../partials/feeter %>
   </body>
-
 </html>
