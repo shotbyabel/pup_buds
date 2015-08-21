@@ -10,9 +10,9 @@ var User = require('../models/User');
 var router = express.Router();
 
 module.exports.renderPuppiesIndex = function(req, res, next){
-  Puppy.find({}, function(err, puppies, user){
+  Puppy.find(function(err, puppies){
     if (err) res.send('> ' + err);
-    res.render('puppies/index',
+    res.render('./puppies',
     {
       puppies: puppies,
       user: req.user
